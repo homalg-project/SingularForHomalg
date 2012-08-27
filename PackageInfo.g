@@ -21,12 +21,12 @@ PackageName := "LibSingularForHomalg",
 
 ##  This may be used by a default banner or on a Web page, should fit on
 ##  one line.
-Subtitle := "An interface between Singular and homalg using libsingular",
+Subtitle := "An interface between Singular and homalg using libsing(ular)",
 
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2011.11.23",
+Version := "2012.08.27",
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
@@ -277,7 +277,7 @@ PackageDoc := rec(
   # a longer title of the book, this together with the book name should
   # fit on a single text line (appears with the '?books' command in GAP)
   # LongTitle := "Elementary Divisors of Integer Matrices",
-  LongTitle := "An interface between Singular and homalg using libsingular",
+  LongTitle := "An interface between Singular and homalg using libsing(ular)",
   # Should this help book be autoloaded when GAP starts up? This should
   # usually be 'true', otherwise say 'false'. 
   Autoload  := false
@@ -296,7 +296,7 @@ Dependencies := rec(
   NeededOtherPackages := [
                 [ "RingsForHomalg", ">= 2011.11.23" ],
                 [ "HomalgToCAS", ">= 2011.11.23" ],
-                [ "libsingular", ">= 0.1" ],
+                [ "libsing", ">= 0.1" ],
                 [ "GAPDoc", ">= 1.0" ]
                 ],
   # without these the package will issue a warning while loading
@@ -355,7 +355,7 @@ Autoload := false,
 ##  *Optional*: Here you can list some keyword related to the topic 
 ##  of the package.
 # Keywords := ["Smith normal form", "p-adic", "rational matrix inversion"]
-Keywords := ["LibSingular"]
+Keywords := ["libsingular"]
 
 ));
 
