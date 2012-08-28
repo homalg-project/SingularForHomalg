@@ -1,6 +1,6 @@
 #############################################################################
 ##  
-##  PackageInfo.g for the package `LibSingularForHomalg'     Mohamed Barakat
+##  PackageInfo.g for the package `SingularForHomalg'     Mohamed Barakat
 ##  (created from Frank Lübeck's PackageInfo.g template file)
 ##  
 
@@ -17,7 +17,7 @@ SetPackageInfo( rec(
 
 ##  This is case sensitive, use your preferred spelling.
 #
-PackageName := "LibSingularForHomalg",
+PackageName := "SingularForHomalg",
 
 ##  This may be used by a default banner or on a Web page, should fit on
 ##  one line.
@@ -44,7 +44,7 @@ Date := Concatenation( ~.Date{[ 9, 10 ]}, "/", ~.Date{[ 6, 7 ]}, "/", ~.Date{[ 1
 ##  directory containing the package (in our "example" probably:
 ##  example/init.g, ...    or  example-1.3/init.g, ...  )
 # 
-ArchiveURL := Concatenation( "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/LibSingularForHomalg-", ~.Version ),
+ArchiveURL := Concatenation( "http://homalg.math.rwth-aachen.de/~barakat/homalg-project/SingularForHomalg-", ~.Version ),
 
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
@@ -215,9 +215,9 @@ Status := "dev",
 ##  and updating of the package in the GAP distribution.
 #
 README_URL := 
-  "http://wwwb.math.rwth-aachen.de/~barakat/gap/LibSingularForHomalg/README.LibSingularForHomalg",
+  "http://wwwb.math.rwth-aachen.de/~barakat/gap/SingularForHomalg/README.SingularForHomalg",
 PackageInfoURL := 
-  "http://wwwb.math.rwth-aachen.de/~barakat/gap/LibSingularForHomalg/PackageInfo.g",
+  "http://wwwb.math.rwth-aachen.de/~barakat/gap/SingularForHomalg/PackageInfo.g",
 
 ##  Here you  must provide a short abstract explaining the package content 
 ##  in HTML format (used on the package overview Web page) and an URL 
@@ -265,10 +265,10 @@ PackageInfoURL :=
 # in case of several help books give a list of such records here:
 PackageDoc := rec(
   # use same as in GAP            
-  BookName  := "LibSingularForHomalg",
+  BookName  := "SingularForHomalg",
   # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
   Archive := 
-    "http://wwwb.math.rwth-aachen.de/~barakat/gap/LibSingularForHomalg/LibSingularForHomalg.tar.gz",
+    "http://wwwb.math.rwth-aachen.de/~barakat/gap/SingularForHomalg/SingularForHomalg.tar.gz",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
@@ -331,7 +331,7 @@ AvailabilityTest := function()
 ##  when it is not shown. *optional* (note the ~-syntax in this example)
 #BannerString := Concatenation( 
 #  "----------------------------------------------------------------\n",
-#  "Loading  LibSingularForHomalg ", ~.Version, "\n",
+#  "Loading  SingularForHomalg ", ~.Version, "\n",
 #  "by ", ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName,
 #        " (", ~.Persons[1].WWWHome, ")\n",
 #  "   ", ~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,

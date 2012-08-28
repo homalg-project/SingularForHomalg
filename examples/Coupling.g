@@ -1,6 +1,6 @@
 # sys:=Ind2Diff([u[x,x]-u[x,y],u[x,y,y],u[x,y,z]],[x,y,z],[u]);
 
-LoadPackage( "LibSingularForHomalg" );
+LoadPackage( "SingularForHomalg" );
 
 Qxyz := HomalgFieldOfRationalsInDefaultCAS( ) * "x,y,z";
 A3 := RingOfDerivations( Qxyz, "Dx,Dy,Dz" );

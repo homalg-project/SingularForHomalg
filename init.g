@@ -1,12 +1,12 @@
 #############################################################################
 ##
-##  init.g                LibSingularForHomalg package              Thomas Bächler
+##  init.g                                         SingularForHomalg package
 ##
-##  Copyright 2009, Thomas Bächler, RWTH Aachen
+##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Reading the declaration part of the LibSingularForHomalg package.
+##  Reading the declaration part of the SingularForHomalg package.
 ##
 #############################################################################
 
 ##
-ReadPackage( "LibSingularForHomalg", "gap/LibSingularForHomalg.gd" );
+ReadPackage( "SingularForHomalg", "gap/SingularForHomalg.gd" );

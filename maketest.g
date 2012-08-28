@@ -4,23 +4,23 @@
 ##  Call this with GAP.
 ##
 
-LoadPackage( "LibSingularForHomalg" );
+LoadPackage( "SingularForHomalg" );
 
 HOMALG_IO.show_banners := false;
 
 LoadPackage( "GAPDoc" );
 
 list := [
-         "../gap/LibSingularForHomalg.gd",
-         "../gap/LibSingularForHomalg.gi",
+         "../gap/SingularForHomalg.gd",
+         "../gap/SingularForHomalg.gi",
          ];
 
 size := SizeScreen( );
 SizeScreen([80]);
 
-TestManualExamples( DirectoriesPackageLibrary( "LibSingularForHomalg", "doc" )[1]![1], "LibSingularForHomalg.xml", list );
+TestManualExamples( DirectoriesPackageLibrary( "SingularForHomalg", "doc" )[1]![1], "SingularForHomalg.xml", list );
 
-GAPDocManualLab( "LibSingularForHomalg" );
+GAPDocManualLab( "SingularForHomalg" );
 
 SizeScreen( size );
 

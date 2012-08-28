@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  LibSingularForHomalg.gd                     LibSingularForHomalg package
+##  SingularForHomalg.gd                     SingularForHomalg package
 ##
 ##  Copyright 2011, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementation stuff for LibSingularForHomalg.
+##  Implementation stuff for SingularForHomalg.
 ##
 #############################################################################
 
@@ -39,9 +39,9 @@ InstallGlobalFunction( LaunchCASLibSingularForHomalg,
   function( arg )
     local success, s;
     
-    success := LoadPackage( "libsingular" );
+    success := LoadPackage( "libsing" );
     
-    if (success) then
+    if success = true then
         
         s := rec(
                  lines := "",

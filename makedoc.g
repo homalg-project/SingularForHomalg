@@ -8,14 +8,14 @@ LoadPackage( "GAPDoc" );
 
 SetGapDocLaTeXOptions( "utf8" );
 
-bib := ParseBibFiles( "doc/LibSingularForHomalg.bib" );
-WriteBibXMLextFile( "doc/LibSingularForHomalgBib.xml", bib );
+bib := ParseBibFiles( "doc/SingularForHomalg.bib" );
+WriteBibXMLextFile( "doc/SingularForHomalgBib.xml", bib );
 
 list := [
-         "../gap/LibSingularForHomalg.gd",
-         "../gap/LibSingularForHomalg.gi",
+         "../gap/SingularForHomalg.gd",
+         "../gap/SingularForHomalg.gi",
          ];
 
-MakeGAPDocDoc( "doc", "LibSingularForHomalg", list, "LibSingularForHomalg" );
+MakeGAPDocDoc( "doc", "SingularForHomalg", list, "SingularForHomalg" );
 
-GAPDocManualLab( "LibSingularForHomalg" );
+GAPDocManualLab( "SingularForHomalg" );
