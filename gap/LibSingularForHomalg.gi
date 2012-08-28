@@ -106,8 +106,6 @@ InstallGlobalFunction( InitializeMacrosForLibSingular,
     
     macros := InitializeMacros( macros, stream );
     
-    JoinStringsWithSeparator( macros );
-    
     homalgSendBlocking( [ "export ", macros ], "need_command", stream, HOMALG_IO.Pictograms.initialize );
     
 end );
@@ -118,8 +116,6 @@ InstallGlobalFunction( InitializeLibSingularMacros,
     local macros;
     
     macros := InitializeSingularMacros( stream );
-    
-    JoinStringsWithSeparator( macros );
     
     homalgSendBlocking( [ "export ", macros ], "need_command", stream, HOMALG_IO.Pictograms.initialize );
     
