@@ -3,8 +3,10 @@
 ##  <Heading>A3_Purity</Heading>
 ##  This is Example B.4 in <Cite Key="BaSF"/>.
 ##  <Example><![CDATA[
-##  gap> Qxyz := HomalgFieldOfRationalsInDefaultCAS( ) * "x,y,z";;
-##  gap> A3 := RingOfDerivations( Qxyz, "Dx,Dy,Dz" );;
+##  gap> Qxyz := HomalgFieldOfRationalsInDefaultCAS( ) * "x,y,z";
+##  Q[x,y,z]
+##  gap> A3 := RingOfDerivations( Qxyz, "Dx,Dy,Dz" );
+##  Q[x,y,z]<Dx,Dy,Dz>
 ##  gap> nmat := HomalgMatrix( "[ \
 ##  > 3*Dy*Dz-Dz^2+Dx+3*Dy-Dz,           3*Dy*Dz-Dz^2,     \
 ##  > Dx*Dz+Dz^2+Dz,                     Dx*Dz+Dz^2,       \
@@ -15,20 +17,23 @@
 ##  > Dz^3-Dx*Dz+Dz^2,                   Dz^3,             \
 ##  > 2*x*Dz^2-2*x*Dx+2*x*Dz+3*Dx+3*Dz+3,2*x*Dz^2+3*Dx+3*Dz\
 ##  > ]", 8, 2, A3 );
-##  <A homalg external 8 by 2 matrix>
+##  <A 8 x 2 matrix over an external ring>
 ##  gap> N := LeftPresentation( nmat );
 ##  <A left module presented by 8 relations for 2 generators>
 ##  gap> filt := PurityFiltration( N );
 ##  <The ascending purity filtration with degrees [ -3 .. 0 ] and graded parts:
 ##     0:	<A zero left module>
-##    -1:	<A cyclic reflexively pure codim 1 left module presented by 
-##  1 relation for a cyclic generator>
-##    -2:	<A cyclic reflexively pure codim 2 left module presented by 
-##  2 relations for a cyclic generator>
-##    -3:	<A cyclic reflexively pure codim 3 left module presented by 
-##  3 relations for a cyclic generator>
+##  
+##  -1:	<A cyclic reflexively pure grade 1 left module presented by 1 relation for\
+##   a cyclic generator>
+##  
+##  -2:	<A cyclic reflexively pure grade 2 left module presented by 2 relations fo\
+##  r a cyclic generator>
+##  
+##  -3:	<A cyclic reflexively pure grade 3 left module presented by 3 relations fo\
+##  r a cyclic generator>
 ##  of
-##  <A non-pure codim 1 left module presented by 8 relations for 2 generators>>
+##  <A non-pure grade 1 left module presented by 8 relations for 2 generators>>
 ##  gap> II_E := SpectralSequence( filt );
 ##  <A stable homological spectral sequence with sheets at levels 
 ##  [ 0 .. 2 ] each consisting of left modules at bidegrees [ -3 .. 0 ]x
@@ -86,20 +91,19 @@
 ##   . . s .
 ##   . . . .
 ##  gap> m := IsomorphismOfFiltration( filt );
-##  <An isomorphism of left modules>
+##  <A non-zero isomorphism of left modules>
 ##  gap> IsIdenticalObj( Range( m ), N );
 ##  true
 ##  gap> Source( m );
 ##  <A left module presented by 6 relations for 3 generators (locked)>
-##  ]]></Example>
-##  <Log><![CDATA[
 ##  gap> Display( last );
-##  Dx,-1/3,-2/9*x,
-##  0, Dy,  -1/3,  
-##  0, Dx,  1,     
-##  0, 0,   Dz,    
-##  0, 0,   Dy,    
-##  0, 0,   Dx     
+##  Dx,1/3,-1/9*x,
+##  0, Dy, 1/6,   
+##  0, Dx, -1/2,  
+##  0, 0,  Dz,    
+##  0, 0,  Dy,    
+##  0, 0,  Dx     
+##  
 ##  Cokernel of the map
 ##  
 ##  R^(1x6) --> R^(1x3), ( for R := Q[x,y,z]<Dx,Dy,Dz> )
@@ -123,11 +127,11 @@
 ##  Q[x,y,z]<Dx,Dy,Dz>/< Dz, Dy, Dx >
 ##  gap> Display( m );
 ##  1,                1,     
-##  -3*Dz-3,          -3*Dz, 
-##  -3*Dz^2+3*Dx-3*Dz,-3*Dz^2
+##  3*Dz+3,           3*Dz,  
+##  -6*Dz^2+6*Dx-6*Dz,-6*Dz^2
 ##  
 ##  the map is currently represented by the above 3 x 2 matrix
-##  ]]></Log>
+##  ]]></Example>
 ##  </Subsection>
 ##  <#/GAPDoc>
 
@@ -138,3 +142,5 @@ filt := PurityFiltration( N );
 II_E := SpectralSequence( filt );
 
 m := IsomorphismOfFiltration( filt );
+
+Display( StringTime( homalgTime( A3 ) ) );

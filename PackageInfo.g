@@ -294,7 +294,7 @@ Dependencies := rec(
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
   NeededOtherPackages := [
-                [ "RingsForHomalg", ">= 2011.11.23" ],
+                [ "RingsForHomalg", ">= 2012.08.27" ],
                 [ "HomalgToCAS", ">= 2011.11.23" ],
                 [ "libsing", ">= 0.1" ],
                 [ "GAPDoc", ">= 1.0" ]

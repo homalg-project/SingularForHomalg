@@ -1,8 +1,8 @@
 # sys:=Ind2Diff([u[x,x]-u[x,y],u[x,y,y],u[x,y,z]],[x,y,z],[u]);
 
-LoadPackage( "MapleForHomalg" );
+LoadPackage( "LibSingularForHomalg" );
 
-Qxyz := HomalgFieldOfRationalsInMaple( ) * "x,y,z";
+Qxyz := HomalgFieldOfRationalsInDefaultCAS( ) * "x,y,z";
 A3 := RingOfDerivations( Qxyz, "Dx,Dy,Dz" );
 
 M1 := HomalgMatrix( "[ \
@@ -51,6 +51,8 @@ N := LeftPresentation( M * tau );
 
 M := LeftPresentation( M );
 
+C := 1 * A3 / LeftSubmodule( "Dx^2-Dx*Dy, Dx*Dy*Dz, Dx*Dy^2", A3 );
+
 tau := HomalgMap( tau, M, N );
 
 ByASmallerPresentation( N );
@@ -58,3 +60,4 @@ ByASmallerPresentation( N );
 DecideZero( tau );
 
 id := HomalgIdentityMap( M );
+
