@@ -10,3 +10,10 @@
 
 ##
 ReadPackage( "SingularForHomalg", "gap/SingularForHomalg.gi" );
+
+ReadPackage( "SingularForHomalg", "gap/Singular.gi" );
+
+ReadPackage( "SingularForHomalg", "gap/SingularBasic.gi" );
+ReadPackage( "SingularForHomalg", "gap/SingularBestBasis.gi" );
+ReadPackage( "SingularForHomalg", "gap/SingularTools.gi" );
+ReadPackage( "SingularForHomalg", "gap/SingularGroebner.gi" );

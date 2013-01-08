@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  SingularForHomalg.gd                     SingularForHomalg package
+##  SingularForHomalg.gd                           SingularForHomalg package
 ##
-##  Copyright 2011, Mohamed Barakat, University of Kaiserslautern
+##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementation stuff for SingularForHomalg.
+##  Implementations for SingularForHomalg.
 ##
 #############################################################################
 
@@ -80,12 +80,12 @@ InstallGlobalFunction( SendBlockingToCASLibSingularForHomalg,
         
         r := Singular( arg[2] );
         
-        stream.lines := LastSingularOutput( );
+        stream.lines := SI_LastOutput( );
         
         if r = 0 then
             stream.errors := "";
         else
-            stream.errors := Concatenation( "error: ", SingularErrors );
+            stream.errors := Concatenation( "error: ", SI_Errors );
         fi;
         
     else
@@ -130,10 +130,3 @@ InstallGlobalFunction( _LibSingular_SetInvolution,
     homalgSendBlocking( "export Involution", "need_command", R, HOMALG_IO.Pictograms.initialize );
     
 end );
-
-#############################################
-#
-# Override Display method for LibSingularForHomalg
-#
-#############################################
-

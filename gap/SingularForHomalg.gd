@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  LibSingularForHomalg.gd                     LibSingularForHomalg package
+##  SingularForHomalg.gd                           SingularForHomalg package
 ##
-##  Copyright 2011, Mohamed Barakat, University of Kaiserslautern
+##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declaration stuff for LibSingularForHomalg.
+##  Declarations for SingularForHomalg.
 ##
 #############################################################################
 
@@ -32,6 +32,12 @@ DeclareGlobalFunction( "InitializeMacrosForLibSingular" );
 DeclareGlobalFunction( "InitializeLibSingularMacros" );
 
 DeclareGlobalFunction( "_LibSingular_SetInvolution" );
+
+# constructor methods:
+
+DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSingular" );
+
+DeclareGlobalFunction( "HomalgRingOfIntegersInLibSingular" );
 
 # basic operations:
 

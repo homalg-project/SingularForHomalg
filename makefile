@@ -2,7 +2,7 @@ all: doc test
 
 doc: doc/manual.six
 
-doc/manual.six: makedoc.g maketest.g \
+doc/manual.six: makedoc.g maketest.g ListOfDocFiles.g \
 		PackageInfo.g \
 		doc/SingularForHomalg.bib doc/*.xml doc/*.css \
 		gap/*.gd gap/*.gi examples/*.g
@@ -15,7 +15,7 @@ test:	doc
 	gapdev maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/SingularForHomalg.tar.gz --exclude ".DS_Store" --exclude "*~" SingularForHomalg/doc/*.* SingularForHomalg/doc/clean SingularForHomalg/gap/*.{gi,gd} SingularForHomalg/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} SingularForHomalg/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/SingularForHomalg.tar.gz --exclude ".DS_Store" --exclude "*~" SingularForHomalg/doc/*.* SingularForHomalg/doc/clean SingularForHomalg/gap/*.{gi,gd} SingularForHomalg/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g,ListOfDocFiles.g} SingularForHomalg/examples/*.g)
 
 WEBPOS=public_html
 WEBPOS_FINAL=~/public_html/SingularForHomalg

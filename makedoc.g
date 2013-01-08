@@ -11,11 +11,13 @@ SetGapDocLaTeXOptions( "utf8" );
 bib := ParseBibFiles( "doc/SingularForHomalg.bib" );
 WriteBibXMLextFile( "doc/SingularForHomalgBib.xml", bib );
 
-list := [
-         "../gap/SingularForHomalg.gd",
-         "../gap/SingularForHomalg.gi",
-         ];
+Read( "ListOfDocFiles.g" );
+
+PrintTo( "VERSION", PackageInfo( "SingularForHomalg" )[1].Version );
 
 MakeGAPDocDoc( "doc", "SingularForHomalg", list, "SingularForHomalg" );
 
 GAPDocManualLab( "SingularForHomalg" );
+
+QUIT;
+
