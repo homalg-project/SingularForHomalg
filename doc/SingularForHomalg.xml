@@ -32,20 +32,21 @@
 	  <!ENTITY Yoneda "<Package>Yoneda</Package>">
 	  <!ENTITY Sheaves "<Package>Sheaves</Package>">
 	  <!ENTITY SCO "<Package>SCO</Package>">
-	  <!ENTITY LibSingularForHomalg "<Package>LibSingularForHomalg</Package>">
+	  <!ENTITY SingularForHomalg "<Package>SingularForHomalg</Package>">
+	  <!ENTITY libsing "<Package>libsing</Package>">
 	  <!ENTITY GAPDoc "<Package>GAPDoc</Package>">
 	  ]
 	  >
 
 <!--
 
-  LibSingularForHomalg.xml          LibSingularForHomalg package documentation               Thomas Bächler
+  SingularForHomalg.xml            SingularForHomalg package documentation               Mohamed Barakat
 
-  Copyright (C) 2009, Thomas Bächler, RWTH Aachen
+         Copyright (C) 2012-2013, Mohamed Barakat, University of Kaiserslautern
 
 -->
 
-<Book Name="LibSingularForHomalg">
+<Book Name="SingularForHomalg">
 
 <#Include SYSTEM "title.xml">
 
@@ -55,13 +56,13 @@
 <!--  chapters of the book  -->
 <Body>
 
-<Index>&LibSingularForHomalg;</Index>
+<Index>&SingularForHomalg;</Index>
 
 <#Include SYSTEM "intro.xml">
 <#Include SYSTEM "install.xml">
 </Body>
 
-<Bibliography Databases="LibSingularForHomalgBib.xml"/>
+<Bibliography Databases="SingularForHomalgBib.xml"/>
 
 <!--  And finally an index as well   -->
 <TheIndex/>

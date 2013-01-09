@@ -17,3 +17,5 @@ ReadPackage( "SingularForHomalg", "gap/SingularBasic.gi" );
 ReadPackage( "SingularForHomalg", "gap/SingularBestBasis.gi" );
 ReadPackage( "SingularForHomalg", "gap/SingularTools.gi" );
 ReadPackage( "SingularForHomalg", "gap/SingularGroebner.gi" );
+
+ReadPackage( "SingularForHomalg", "gap/GAPHomalg.gi" );

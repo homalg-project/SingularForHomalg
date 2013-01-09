@@ -2,9 +2,9 @@
 
 <!-- 
 
-  intro.xml             LibSingularForHomalg package documentation             Thomas Bächler
+  intro.xml            SingularForHomalg package documentation               Mohamed Barakat
 
-         Copyright (C) 2009, Thomas Bächler, RWTH Aachen
+         Copyright (C) 2012-2013, Mohamed Barakat, University of Kaiserslautern
 
 This chapter gives a short introduction and explains the philosophy
 behind the package.

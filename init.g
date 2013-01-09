@@ -17,3 +17,5 @@ ReadPackage( "SingularForHomalg", "gap/SingularBasic.gd" );
 ReadPackage( "SingularForHomalg", "gap/SingularBestBasis.gd" );
 ReadPackage( "SingularForHomalg", "gap/SingularTools.gd" );
 ReadPackage( "SingularForHomalg", "gap/SingularGroebner.gd" );
+
+ReadPackage( "SingularForHomalg", "gap/GAPHomalg.gd" );
