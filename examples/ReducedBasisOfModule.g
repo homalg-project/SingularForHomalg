@@ -2,9 +2,11 @@ LoadPackage( "SingularForHomalg" );
 
 homalgIOMode( "D" );
 
-SetAssertionLevel( 4 );
+SetAssertionLevel( 6 );
 
-Qxyz := HomalgFieldOfRationalsInExternalLibSingular( ) * "x,y,z";
+Q := HomalgFieldOfRationalsInExternalLibSingular( );
+
+Qxyz := Q * "x,y,z";
 
 wmat := HomalgMatrix( "[ \
 xy,  yz,    z,        0,         0,    \
