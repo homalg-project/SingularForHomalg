@@ -39,6 +39,78 @@ BindGlobal( "TheTypeHomalgLibSingularRing",
 
 ####################################
 #
+# methods for attributes:
+#
+####################################
+
+##
+InstallMethod( Zero,
+        "for homalg rings",
+        [ IsHomalgLibSingularRingRep ],
+        
+  function( R )
+    local RP;
+    
+    RP := homalgTable( R );
+    
+    if IsBound(RP!.Zero) then
+        if IsFunction( RP!.Zero ) then
+            return RP!.Zero( R );
+        else
+            return RP!.Zero;
+        fi;
+    fi;
+    
+    TryNextMethod( );
+    
+end );
+
+##
+InstallMethod( One,
+        "for homalg rings",
+        [ IsHomalgLibSingularRingRep ],
+        
+  function( R )
+    local RP;
+    
+    RP := homalgTable( R );
+    
+    if IsBound(RP!.One) then
+        if IsFunction( RP!.One ) then
+            return RP!.One( R );
+        else
+            return RP!.One;
+        fi;
+    fi;
+    
+    TryNextMethod( );
+    
+end );
+
+##
+InstallMethod( MinusOne,
+        "for homalg rings",
+        [ IsHomalgLibSingularRingRep ],
+        
+  function( R )
+    local RP;
+    
+    RP := homalgTable( R );
+    
+    if IsBound(RP!.MinusOne) then
+        if IsFunction( RP!.MinusOne ) then
+            return RP!.MinusOne( R );
+        else
+            return RP!.MinusOne;
+        fi;
+    fi;
+    
+    TryNextMethod( );
+    
+end );
+
+####################################
+#
 # global functions and variables:
 #
 ####################################
