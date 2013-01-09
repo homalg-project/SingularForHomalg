@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##  SingularForHomalg.gd                           SingularForHomalg package
+##  SingularForHomalg.gi                           SingularForHomalg package
 ##
 ##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
