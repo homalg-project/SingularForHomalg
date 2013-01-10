@@ -35,9 +35,5 @@ DeclareGlobalFunction( "_LibSingular_SetInvolution" );
 
 # constructor methods:
 
-DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSingular" );
-
-DeclareGlobalFunction( "HomalgRingOfIntegersInLibSingular" );
-
 # basic operations:
 

@@ -10,8 +10,12 @@
 
 ####################################
 #
-# global variables:
+# global variables and functions:
 #
 ####################################
 
 DeclareGlobalVariable( "RingMacrosForGAPWithSingularForHomalg" );
+
+# constructors:
+
+DeclareGlobalFunction( "HomalgFieldOfRationalsInExternalSingularForHomalg" );

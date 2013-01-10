@@ -10,7 +10,7 @@
 
 ####################################
 #
-# global variables:
+# global variables and functions:
 #
 ####################################
 
@@ -52,6 +52,8 @@ DeclareGlobalFunction( "SI_UnionOfRows" );
 
 DeclareGlobalFunction( "SI_UnionOfColumns" );
 
-# constructor methods:
+# constructors:
 
-DeclareGlobalFunction( "HomalgFieldOfRationalsInExternalSingularForHomalg" );
+DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSingular" );
+
+DeclareGlobalFunction( "HomalgRingOfIntegersInLibSingular" );

@@ -346,7 +346,7 @@ end );
 #
 ####################################
 
-##
+## talk with libsingular via the GAP package libsing
 InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
   function( arg )
     local nargs, param, minimal_polynomial, Q, R;
@@ -380,6 +380,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
     
     R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
     
+    ## the above code is copied and still unused
     R := SI_ring( 0, [ "dummy_variable" ] );
     
     R := CreateHomalgRing( R, [ TheTypeHomalgLibSingularRing, TheTypeHomalgInternalMatrix ] );
@@ -407,25 +408,6 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
         SetIsRationalsForHomalg( R, true );
         
     fi;
-    
-    SetRingProperties( R, 0 );
-    
-    return R;
-    
-end );
-
-##
-InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularForHomalg,
-  function( arg )
-    local R;
-    
-    R := "HomalgFieldOfRationalsInLibSingular( )";
-    
-    R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
-    
-    R := CallFuncList( RingForHomalgInExternalGAP, R );
-    
-    SetIsRationalsForHomalg( R, true );
     
     SetRingProperties( R, 0 );
     

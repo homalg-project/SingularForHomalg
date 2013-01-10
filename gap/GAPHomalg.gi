@@ -32,6 +32,25 @@ UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithSingularForHomalg );
 #
 ####################################
 
+## talk with libsing via external gap equipped with the SingularForHomalg package
+InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularForHomalg,
+  function( arg )
+    local R;
+    
+    R := "HomalgFieldOfRationalsInLibSingular( )";
+    
+    R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
+    
+    R := CallFuncList( RingForHomalgInExternalGAP, R );
+    
+    SetIsRationalsForHomalg( R, true );
+    
+    SetRingProperties( R, 0 );
+    
+    return R;
+    
+end );
+
 ##
 InstallMethod( PolynomialRing,
         "for homalg rings in external GAP",
