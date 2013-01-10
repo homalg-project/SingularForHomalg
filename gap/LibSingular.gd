@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  SingularForHomalg.gd                           SingularForHomalg package
+##  LibSingular.gd                                 SingularForHomalg package
 ##
 ##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declarations for SingularForHomalg.
+##  Declarations to use Singular's interpreter via libsing.
 ##
 #############################################################################
 
