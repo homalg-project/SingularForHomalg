@@ -22,14 +22,14 @@
 ####################################
 
 ##
-DeclareRepresentation( "IsHomalgLibSingularRingRep",
+DeclareRepresentation( "IsHomalgLibSingRingRep",
         IsHomalgInternalRingRep,
         [ "ring", "homalgTable" ] );
 
 ##
-BindGlobal( "TheTypeHomalgLibSingularRing",
+BindGlobal( "TheTypeHomalgLibSingRing",
         NewType( TheFamilyOfHomalgRings,
-                IsHomalgLibSingularRingRep ) );
+                IsHomalgLibSingRingRep ) );
 
 ####################################
 #
@@ -321,7 +321,7 @@ end );
 ## Max
 InstallMethod( IsUnit,
         "",
-        [ IsHomalgLibSingularRingRep, IsRingElement ],
+        [ IsHomalgLibSingRingRep, IsRingElement ],
         
   function( R, r )
     
@@ -332,7 +332,7 @@ end );
 ##
 InstallMethod( MatElm,
         "for homalg internal matrices",
-        [ IsHomalgInternalMatrixRep, IsPosInt, IsPosInt, IsHomalgLibSingularRingRep ],
+        [ IsHomalgInternalMatrixRep, IsPosInt, IsPosInt, IsHomalgLibSingRingRep ],
         
   function( M, r, c, R )
     
@@ -383,7 +383,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
     ## the above code is copied and still unused
     R := SI_ring( 0, [ "dummy_variable" ] );
     
-    R := CreateHomalgRing( R, [ TheTypeHomalgLibSingularRing, TheTypeHomalgInternalMatrix ] );
+    R := CreateHomalgRing( R, [ TheTypeHomalgLibSingRing, TheTypeHomalgInternalMatrix ] );
     
     if IsBound( minimal_polynomial ) then
         ## FIXME: we assume the polynomial is irreducible of degree > 1
@@ -418,7 +418,7 @@ end );
 ##
 InstallMethod( PolynomialRing,
         "for homalg rings in Singular",
-        [ IsHomalgLibSingularRingRep, IsList ],
+        [ IsHomalgLibSingRingRep, IsList ],
         
   function( R, indets )
     local ar, r, var, nr_var, properties, param, ext_obj, S, l, RP;
@@ -438,7 +438,7 @@ InstallMethod( PolynomialRing,
         ext_obj := SI_ring( Characteristic( R ), var );
     fi;
     
-    S := CreateHomalgRing( ext_obj, [ TheTypeHomalgLibSingularRing, TheTypeHomalgInternalMatrix ] );
+    S := CreateHomalgRing( ext_obj, [ TheTypeHomalgLibSingRing, TheTypeHomalgInternalMatrix ] );
     
     if IsBound( r!.MinimalPolynomialOfPrimitiveElement ) then
         homalgSendBlocking( [ "minpoly=", r!.MinimalPolynomialOfPrimitiveElement ], "need_command", S, HOMALG_IO.Pictograms.define );
@@ -490,7 +490,7 @@ end );
 ##
 InstallMethod( \/,
         "for ring elements",
-        [ IsString, IsHomalgLibSingularRingRep ],
+        [ IsString, IsHomalgLibSingRingRep ],
         
   function( r, R )
     
@@ -501,7 +501,7 @@ end );
 ##
 InstallMethod( \/,
         "for ring elements",
-        [ IsRingElement, IsHomalgLibSingularRingRep ],
+        [ IsRingElement, IsHomalgLibSingRingRep ],
         
   function( r, R )
     
@@ -512,7 +512,7 @@ end );
 ##
 InstallMethod( CreateHomalgMatrixFromString,
         "constructor for homalg matrices",
-        [ IsString, IsInt, IsInt, IsHomalgLibSingularRingRep ],
+        [ IsString, IsInt, IsInt, IsHomalgLibSingRingRep ],
         
   function( S, r, c, R )
     local s;
@@ -530,7 +530,7 @@ end );
 ##
 InstallMethod( CreateHomalgMatrixFromList,
         "constructor for homalg matrices",
-        [ IsList, IsInt, IsInt, IsHomalgLibSingularRingRep ],
+        [ IsList, IsInt, IsInt, IsHomalgLibSingRingRep ],
         
   function( M, r, c, R )
     
@@ -553,7 +553,7 @@ InstallMethod( Display,
         
   function( o )
     
-    if not IsHomalgLibSingularRingRep( HomalgRing( o ) ) then
+    if not IsHomalgLibSingRingRep( HomalgRing( o ) ) then
         
         TryNextMethod( );
         
