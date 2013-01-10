@@ -4,8 +4,7 @@
 ##
 ##  Copyright 2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for Singular.
-##
+##  Implementations to use Singular via libsing.
 ##
 #############################################################################
 

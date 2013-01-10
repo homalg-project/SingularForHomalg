@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declarations for Singular.
+##  Declarations to use Singular via libsing.
 ##
 #############################################################################
 
