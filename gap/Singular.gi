@@ -542,7 +542,7 @@ end );
 
 #############################################
 #
-# Override Display method for LibSingularForHomalg
+# Override Display method for SingularForHomalg
 #
 #############################################
 
