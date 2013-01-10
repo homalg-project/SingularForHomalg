@@ -1,9 +1,5 @@
 LoadPackage( "SingularForHomalg" );
 
-homalgIOMode( "D" );
-
-SetAssertionLevel( 6 );
-
 Q := HomalgFieldOfRationalsInExternalLibSingular( );
 
 Qxyz := Q * "x,y,z";
