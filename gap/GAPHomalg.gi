@@ -9,7 +9,7 @@
 #############################################################################
 
 ##
-InstallValue( RingMacrosForGAPWithLibSing,
+InstallValue( RingMacrosForGAPWithSingularForHomalg,
         rec(
             
             _CAS_name := "gap",
@@ -23,8 +23,8 @@ InstallValue( RingMacrosForGAPWithLibSing,
         );
 
 ##
-UpdateMacrosOfCAS( RingMacrosForGAPWithLibSing, GAPHomalgMacros );
-UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithLibSing );
+UpdateMacrosOfCAS( RingMacrosForGAPWithSingularForHomalg, GAPHomalgMacros );
+UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithSingularForHomalg );
 
 ####################################
 #
