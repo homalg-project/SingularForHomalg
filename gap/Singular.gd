@@ -54,6 +54,6 @@ DeclareGlobalFunction( "SI_UnionOfColumns" );
 
 # constructors:
 
-DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSingular" );
+DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSing" );
 
-DeclareGlobalFunction( "HomalgRingOfIntegersInLibSingular" );
+DeclareGlobalFunction( "HomalgRingOfIntegersInLibSing" );

@@ -341,7 +341,7 @@ end );
 ####################################
 
 ## talk with libsingular via the GAP package libsing
-InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
+InstallGlobalFunction( HomalgFieldOfRationalsInLibSing,
   function( arg )
     local nargs, param, minimal_polynomial, Q, R;
     
@@ -362,7 +362,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
             arg := arg{[ 2 .. nargs - 1 ]};
         fi;
         
-        Q := CallFuncList( HomalgFieldOfRationalsInLibSingular, arg );
+        Q := CallFuncList( HomalgFieldOfRationalsInLibSing, arg );
         
         R := [ "(0,", JoinStringsWithSeparator( param ), "),dummy_variable,dp" ];
         
@@ -542,7 +542,7 @@ end );
 
 ##
 InstallMethod( Display,
-        "for homalg LibSingular matrices",
+        "for homalg LibSing matrices",
         [ IsHomalgInternalMatrixRep ], 1,
         
   function( o )

@@ -37,7 +37,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularForHomalg,
   function( arg )
     local R;
     
-    R := "HomalgFieldOfRationalsInLibSingular( )";
+    R := "HomalgFieldOfRationalsInLibSing( )";
     
     R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
     
@@ -69,9 +69,9 @@ InstallMethod( PolynomialRing,
     
     ## create the new ring
     if HasIsIntegersForHomalg( r ) and IsIntegersForHomalg( r ) then
-        ext_obj := homalgSendBlocking( [ "HomalgRingOfIntegersInLibSingular(", param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "HomalgRingOfIntegersInLibSing(", param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     else
-        ext_obj := homalgSendBlocking( [ "HomalgFieldOfRationalsInLibSingular(", Characteristic( R ), param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "HomalgFieldOfRationalsInLibSing(", Characteristic( R ), param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     fi;
     
     S := CreateHomalgExternalRing( ext_obj, TheTypeHomalgExternalRingInGAP );
