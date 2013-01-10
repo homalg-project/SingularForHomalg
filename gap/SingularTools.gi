@@ -19,16 +19,6 @@ InstallValue( CommonHomalgTableForLibSingularTools,
         
         rec(
                
-               Zero := R -> SI_poly( R!.ring, "0" ),
-               
-               One := R -> SI_poly( R!.ring, "1" ),
-               
-               MinusOne := R -> SI_poly( R!.ring, "-1" ),
-               
-               IsZero := r -> SI_\=\=( r, ~.Zero ) = 1,
-               
-               IsOne := r -> SI_\=\=( r, ~.One ) = 1,
-               
                Minus :=
                  function( a, b )
                    

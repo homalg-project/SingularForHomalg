@@ -22,11 +22,7 @@ InstallMethod( CreateHomalgTable,
     local RP;
     
     RP := rec(
-              Zero := SI_poly( singular_ring, "0" ),
               
-              One := SI_poly( singular_ring, "1" ),
-              
-              MinusOne := SI_poly( singular_ring, "-1" ),
               );
     
     ## RP_General
