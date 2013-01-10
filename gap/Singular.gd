@@ -54,4 +54,4 @@ DeclareGlobalFunction( "SI_UnionOfColumns" );
 
 # constructor methods:
 
-DeclareGlobalFunction( "HomalgFieldOfRationalsInExternalLibSingular" );
+DeclareGlobalFunction( "HomalgFieldOfRationalsInExternalSingularForHomalg" );

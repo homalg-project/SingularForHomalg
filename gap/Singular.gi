@@ -415,7 +415,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSingular,
 end );
 
 ##
-InstallGlobalFunction( HomalgFieldOfRationalsInExternalLibSingular,
+InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularForHomalg,
   function( arg )
     local R;
     
