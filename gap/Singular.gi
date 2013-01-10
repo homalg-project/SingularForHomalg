@@ -33,12 +33,6 @@ BindGlobal( "TheTypeHomalgLibSingRing",
 
 ####################################
 #
-# families and types:
-#
-####################################
-
-####################################
-#
 # global functions and variables:
 #
 ####################################
