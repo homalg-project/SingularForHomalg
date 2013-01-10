@@ -14,5 +14,5 @@
 #
 ####################################
 
-DeclareGlobalVariable( "CommonHomalgTableForLibSingularTools" );
+DeclareGlobalVariable( "CommonHomalgTableForLibSingTools" );
 

@@ -14,5 +14,5 @@
 #
 ####################################
 
-DeclareGlobalVariable( "CommonHomalgTableForLibSingularBestBasis" );
+DeclareGlobalVariable( "CommonHomalgTableForLibSingBestBasis" );
 

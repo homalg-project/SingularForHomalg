@@ -15,7 +15,7 @@
 #
 ####################################
 
-InstallValue( CommonHomalgTableForLibSingularTools,
+InstallValue( CommonHomalgTableForLibSingTools,
         
         rec(
                
