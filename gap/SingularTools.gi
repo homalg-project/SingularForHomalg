@@ -61,7 +61,7 @@ InstallValue( CommonHomalgTableForLibSingularTools,
                    
                  end,
                
-               CancelGcd :=
+               XCancelGcd :=
                  function( a, b )
                    local g, a_g, b_g;
                    
