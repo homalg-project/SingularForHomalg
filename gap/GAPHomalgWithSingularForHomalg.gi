@@ -1,10 +1,10 @@
 #############################################################################
 ##
-##  GAPHomalg.gi                                   SingularForHomalg package
+##  GAPHomalgWithSingularForHomalg.gi              SingularForHomalg package
 ##
 ##  Copyright 2012-2013, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for the external computer algebra system GAP with LibSing.
+##  Implementations for the external computer algebra system GAP with SingularForHomalg.
 ##
 #############################################################################
 

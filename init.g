@@ -18,4 +18,4 @@ ReadPackage( "SingularForHomalg", "gap/SingularGroebner.gd" );
 
 ReadPackage( "SingularForHomalg", "gap/LibSingular.gd" );
 
-ReadPackage( "SingularForHomalg", "gap/GAPHomalg.gd" );
+ReadPackage( "SingularForHomalg", "gap/GAPHomalgWithSingularForHomalg.gd" );
