@@ -9,6 +9,8 @@
 #############################################################################
 
 ##
+ReadPackage( "SingularForHomalg", "gap/SIH_Functions.gi" );
+
 ReadPackage( "SingularForHomalg", "gap/Singular.gi" );
 
 ReadPackage( "SingularForHomalg", "gap/SingularBasic.gi" );

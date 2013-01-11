@@ -137,28 +137,28 @@ InstallValue( CommonHomalgTableForLibSingTools,
                CertainRows :=
                  function( M, plist )
                    
-                   return homalgInternalMatrixHull( SI_Submatrix( Eval( M )!.matrix, [ 1 .. NrColumns( M ) ], plist ) );
+                   return homalgInternalMatrixHull( SIH_Submatrix( Eval( M )!.matrix, [ 1 .. NrColumns( M ) ], plist ) );
                    
                  end,
                
                CertainColumns :=
                  function( M, plist )
                    
-                   return homalgInternalMatrixHull( SI_Submatrix( Eval( M )!.matrix, plist, [ 1 .. NrRows( M ) ] ) );
+                   return homalgInternalMatrixHull( SIH_Submatrix( Eval( M )!.matrix, plist, [ 1 .. NrRows( M ) ] ) );
                    
                  end,
                
                UnionOfRows :=
                  function( A, B )
                    
-                   return homalgInternalMatrixHull( SI_UnionOfColumns( Eval( A )!.matrix, Eval( B )!.matrix ) );
+                   return homalgInternalMatrixHull( SIH_UnionOfColumns( Eval( A )!.matrix, Eval( B )!.matrix ) );
                    
                  end,
                
                UnionOfColumns :=
                  function( A, B )
                    
-                   return homalgInternalMatrixHull( SI_UnionOfRows( Eval( A )!.matrix, Eval( B )!.matrix ) );
+                   return homalgInternalMatrixHull( SIH_UnionOfRows( Eval( A )!.matrix, Eval( B )!.matrix ) );
                    
                  end,
                
@@ -252,14 +252,14 @@ InstallValue( CommonHomalgTableForLibSingTools,
                ZeroRows :=
                  function( C )
                    
-                   return SI_ZeroColumns( Eval( C )!.matrix );
+                   return SIH_ZeroColumns( Eval( C )!.matrix );
                    
                  end,
                
                ZeroColumns :=
                  function( C )
                    
-                   return SI_ZeroRows( Eval( C )!.matrix );
+                   return SIH_ZeroRows( Eval( C )!.matrix );
                    
                  end,
                

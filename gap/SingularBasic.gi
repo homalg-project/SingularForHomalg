@@ -39,7 +39,7 @@ BasisOfRowModule :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_BasisOfColumnModule( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_BasisOfColumnModule( M ) ) );
     
     return N;
     
@@ -68,7 +68,7 @@ BasisOfColumnModule :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_BasisOfRowModule( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_BasisOfRowModule( M ) ) );
     
     return N;
     
@@ -97,7 +97,7 @@ BasisOfRowsCoeff :=
     
     M := Eval( M )!.matrix;
     
-    L := SI_BasisOfColumnsCoeff( M );
+    L := SIH_BasisOfColumnsCoeff( M );
     
     SetEval( N, homalgInternalMatrixHull( L[1] ) );
     SetEval( T, homalgInternalMatrixHull( L[2] ) );
@@ -129,7 +129,7 @@ BasisOfColumnsCoeff :=
     
     M := Eval( M )!.matrix;
     
-    L := SI_BasisOfRowsCoeff( M );
+    L := SIH_BasisOfRowsCoeff( M );
     
     SetEval( N, homalgInternalMatrixHull( L[1] ) );
     SetEval( T, homalgInternalMatrixHull( L[2] ) );
@@ -162,7 +162,7 @@ DecideZeroRows :=
     A := Eval( A )!.matrix;
     B := Eval( B )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_DecideZeroColumns( A, B ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_DecideZeroColumns( A, B ) ) );
     
     return N;
     
@@ -192,7 +192,7 @@ DecideZeroColumns :=
     A := Eval( A )!.matrix;
     B := Eval( B )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_DecideZeroRows( A, B ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_DecideZeroRows( A, B ) ) );
     
     return N;
     
@@ -222,7 +222,7 @@ DecideZeroRowsEffectively :=
     A := Eval( A )!.matrix;
     B := Eval( B )!.matrix;
     
-    L := SI_DecideZeroColumnsEffectively( A, B );
+    L := SIH_DecideZeroColumnsEffectively( A, B );
     
     SetEval( N, homalgInternalMatrixHull( L[1] ) );
     SetEval( T, homalgInternalMatrixHull( L[2] ) );
@@ -255,7 +255,7 @@ DecideZeroColumnsEffectively :=
     A := Eval( A )!.matrix;
     B := Eval( B )!.matrix;
     
-    L := SI_DecideZeroRowsEffectively( A, B );
+    L := SIH_DecideZeroRowsEffectively( A, B );
     
     SetEval( N, homalgInternalMatrixHull( L[1] ) );
     SetEval( T, homalgInternalMatrixHull( L[2] ) );
@@ -287,7 +287,7 @@ SyzygiesGeneratorsOfRows :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_SyzygiesGeneratorsOfColumns( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_SyzygiesGeneratorsOfColumns( M ) ) );
     
     return N;
     
@@ -316,7 +316,7 @@ SyzygiesGeneratorsOfColumns :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_SyzygiesGeneratorsOfRows( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_SyzygiesGeneratorsOfRows( M ) ) );
     
     return N;
     
@@ -346,7 +346,7 @@ RelativeSyzygiesGeneratorsOfRows :=
     M := Eval( M )!.matrix;
     M2 := Eval( M2 )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_RelativeSyzygiesGeneratorsOfColumns( M, M2 ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_RelativeSyzygiesGeneratorsOfColumns( M, M2 ) ) );
     
     return N;
     
@@ -376,7 +376,7 @@ RelativeSyzygiesGeneratorsOfColumns :=
     M := Eval( M )!.matrix;
     M2 := Eval( M2 )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_RelativeSyzygiesGeneratorsOfRows( M, M2 ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_RelativeSyzygiesGeneratorsOfRows( M, M2 ) ) );
     
     return N;
     
@@ -405,7 +405,7 @@ XReducedSyzygiesGeneratorsOfRows :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_ReducedSyzygiesGeneratorsOfColumns( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_ReducedSyzygiesGeneratorsOfColumns( M ) ) );
     
     return N;
     
@@ -434,7 +434,7 @@ XReducedSyzygiesGeneratorsOfColumns :=
     
     M := Eval( M )!.matrix;
     
-    SetEval( N, homalgInternalMatrixHull( SI_ReducedSyzygiesGeneratorsOfRows( M ) ) );
+    SetEval( N, homalgInternalMatrixHull( SIH_ReducedSyzygiesGeneratorsOfRows( M ) ) );
     
     return N;
     
