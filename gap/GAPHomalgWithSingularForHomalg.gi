@@ -28,7 +28,7 @@ InstallValue( RingMacrosForGAPWithSingularForHomalg,
             
             _Identifier := "SingularForHomalg",
             
-            $init_string_SingularForHomalg := "LoadPackage(\"SingularForHomalg\")",
+            ("!init_string_SingularForHomalg") := "LoadPackage(\"SingularForHomalg\")",
             
             )
         

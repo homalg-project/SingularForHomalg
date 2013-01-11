@@ -296,7 +296,7 @@ Dependencies := rec(
   NeededOtherPackages := [
                 [ "MatricesForHomalg", ">= 2013.01.09" ],
                 [ "RingsForHomalg", ">= 2013.01.08" ],
-                [ "HomalgToCAS", ">= 2013.01.08" ],
+                [ "HomalgToCAS", ">= 2013.01.09" ],
                 [ "libsing", ">= 0.5" ],
                 [ "GAPDoc", ">= 1.0" ]
                 ],
