@@ -109,16 +109,14 @@ InstallValue( CommonHomalgTableForLibSingTools,
                
                IdentityMatrix :=
                  function( C )
-                   local R, r, id;
+                   local R, r;
                    
                    R := HomalgRing( C );
                    
                    r := NrRows( C );
                    
-                   id := JoinStringsWithSeparator( Flat( IdentityMat( r ) ) );
-                   
                    ## do not use anything which invokes SI_transpose here
-                   return homalgInternalMatrixHull( SI_matrix( r, r, R!.ring, id ) );
+                   return homalgInternalMatrixHull( SI_matrix( SI_freemodule( R!.ring, r ) ) );
                    
                  end,
                
