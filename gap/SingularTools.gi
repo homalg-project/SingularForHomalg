@@ -252,14 +252,14 @@ InstallValue( CommonHomalgTableForLibSingTools,
                ZeroRows :=
                  function( C )
                    
-                   return SI_ZeroColumns( Eval( C )!.matrix, HomalgRing( C )!.ring );
+                   return SI_ZeroColumns( Eval( C )!.matrix );
                    
                  end,
                
                ZeroColumns :=
                  function( C )
                    
-                   return SI_ZeroRows( Eval( C )!.matrix, HomalgRing( C )!.ring );
+                   return SI_ZeroRows( Eval( C )!.matrix );
                    
                  end,
                

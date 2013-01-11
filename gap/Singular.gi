@@ -156,12 +156,12 @@ end );
 
 ##
 InstallGlobalFunction( SI_ZeroColumns,
-  function( M, R )
+  function( M )
     local zero;
     
     M := SI_module( M );
     
-    zero := SI_vector( SI_poly( R, "0" ) );
+    zero := SI_\[( M, 0 );
     
     return Filtered( [ 1 .. SI_ncols( M ) ], i -> SI_\=\=( SI_\[( M, i ), zero ) = 1 );
     
@@ -169,9 +169,9 @@ end );
 
 ##
 InstallGlobalFunction( SI_ZeroRows,
-  function( M, R )
+  function( M )
     
-    return SI_ZeroColumns( SI_transpose( M ), R );
+    return SI_ZeroColumns( SI_transpose( M ) );
     
 end );
 
