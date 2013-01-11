@@ -103,7 +103,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                    r := NrRows( C );
                    
                    ## do not use anything which invokes SI_transpose here
-                   return homalgInternalMatrixHull( SI_matrix( c, r, R!.ring, "0" ) );
+                   return homalgInternalMatrixHull( SI_matrix( R!.ring, c, r, "0" ) );
                    
                  end,
                

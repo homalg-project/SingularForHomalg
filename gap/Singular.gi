@@ -514,7 +514,7 @@ InstallMethod( CreateHomalgMatrixFromString,
     
     RemoveCharacters( s, "\[\]\\\n\"\ " );
     
-    s := homalgInternalMatrixHull( SI_transpose( SI_matrix( r, c, R!.ring, s ) ) );
+    s := homalgInternalMatrixHull( SI_transpose( SI_matrix( R!.ring, r, c, s ) ) );
     
     return HomalgMatrix( s, r, c, R );
     
