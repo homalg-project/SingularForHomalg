@@ -44,7 +44,7 @@ BindGlobal( "TheTypeHomalgLibSingRing",
 
 ##
 InstallMethod( IsUnit,
-        "",
+        "for libsing ring elements",
         [ IsHomalgLibSingRingRep, IsRingElement ],
         
   function( R, r )
