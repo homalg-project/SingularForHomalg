@@ -20,4 +20,10 @@ ReadPackage( "SingularForHomalg", "gap/SingularGroebner.gi" );
 
 ReadPackage( "SingularForHomalg", "gap/LibSingular.gi" );
 
+ReadPackage( "SingularForHomalg", "gap/GAPHomalg.gi" );
+ReadPackage( "SingularForHomalg", "gap/GAPHomalgBasic.gi" );
+ReadPackage( "SingularForHomalg", "gap/GAPHomalgBestBasis.gi" );
+ReadPackage( "SingularForHomalg", "gap/GAPHomalgTools.gi" );
+ReadPackage( "SingularForHomalg", "gap/GAPHomalgGroebner.gi" );
+
 ReadPackage( "SingularForHomalg", "gap/GAPHomalgWithSingularForHomalg.gi" );

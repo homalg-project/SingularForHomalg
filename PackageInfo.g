@@ -26,7 +26,7 @@ Subtitle := "An interface between Singular and homalg using libsing(ular)",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2013.01.10",
+Version := "2013.01.11",
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.
 
@@ -295,7 +295,7 @@ Dependencies := rec(
   # without these, the package will not load
   NeededOtherPackages := [
                 [ "MatricesForHomalg", ">= 2013.01.09" ],
-                [ "RingsForHomalg", ">= 2013.01.08" ],
+                [ "RingsForHomalg", ">= 2013.02.23" ],
                 [ "HomalgToCAS", ">= 2013.01.09" ],
                 [ "libsing", ">= 0.5" ],
                 [ "GAPDoc", ">= 1.0" ]
