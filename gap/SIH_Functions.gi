@@ -56,7 +56,7 @@ InstallGlobalFunction( SIH_DecideZeroColumnsEffectively,
     
     M := SIH_DecideZeroColumns( A, B );
     
-    return [ M, SI_lift( B, SI_\-( M, A ) ) ];
+    return [ M, SI_lift( B, M - A ) ];
     
 end );
 
@@ -104,7 +104,7 @@ end );
 InstallGlobalFunction( SIH_ReducedSyzygiesGeneratorsOfColumns,
   function( M )
     
-    return SI_\[( SI_nres( M, 2 ), 2 );
+    return SI_nres( M, 2 )[2];
     
 end );
 
@@ -123,9 +123,10 @@ InstallGlobalFunction( SIH_ZeroColumns,
     
     M := SI_module( M );
     
-    zero := SI_\[( M, 0 );
+    zero := M[0];
     
-    return Filtered( [ 1 .. SI_ncols( M ) ], i -> SI_\=\=( SI_\[( M, i ), zero ) = 1 );
+    ##FIXME: should become: return Filtered( M, IsZero );
+    return Filtered( [ 1 .. SI_ncols( M ) ], i -> SI_\=\=( M[i], zero ) = 1 );
     
 end );
 

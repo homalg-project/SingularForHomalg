@@ -103,8 +103,8 @@ BasisOfRowsCoeff :=
     
     homalgSendBlocking(
       [
-        v, "l := SIH_BasisOfColumnsCoeff(", M, "); ",
-        N, " := ", v, "l[1]; ",
+        v, "l := SIH_BasisOfColumnsCoeff(", M, ");; ",
+        N, " := ", v, "l[1];; ",
         T, " := ", v, "l[2]"
       ],
       "need_command",
@@ -140,8 +140,8 @@ BasisOfColumnsCoeff :=
     
     homalgSendBlocking(
       [
-        v, "l := SIH_BasisOfRowsCoeff(", M, "); ",
-        N, " := ", v, "l[1]; ",
+        v, "l := SIH_BasisOfRowsCoeff(", M, ");; ",
+        N, " := ", v, "l[1];; ",
         T, " := ", v, "l[2]"
       ],
       "need_command",
@@ -174,7 +174,7 @@ DecideZeroRows :=
     );
     
     homalgSendBlocking(
-      [ N, " := SIH_DecideZeroColumns( ", A, B, " )" ],
+      [ N, " := SIH_DecideZeroColumns(", A, B, ")" ],
       "need_command",
       HOMALG_IO.Pictograms.DecideZero
     );
@@ -205,7 +205,7 @@ DecideZeroColumns :=
     );
     
     homalgSendBlocking(
-      [ N, " := SIH_DecideZeroRows( ", A, B, " )" ],
+      [ N, " := SIH_DecideZeroRows(", A, B, ")" ],
       "need_command",
       HOMALG_IO.Pictograms.DecideZero
     );
@@ -239,8 +239,8 @@ DecideZeroRowsEffectively :=
     
     homalgSendBlocking(
       [
-        v, "l := SIH_DecideZeroColumnsEffectively(", A, B, "); ",
-        N, " := ", v, "l[1]; ",
+        v, "l := SIH_DecideZeroColumnsEffectively(", A, B, ");; ",
+        N, " := ", v, "l[1];; ",
         T, " := ", v, "l[2]"
       ],
       "need_command",
@@ -276,8 +276,8 @@ DecideZeroColumnsEffectively :=
     
     homalgSendBlocking(
       [
-        v, "l := SIH_DecideZeroRowsEffectively(", A, B, "); ",
-        N, " := ", v, "l[1]; ",
+        v, "l := SIH_DecideZeroRowsEffectively(", A, B, ");; ",
+        N, " := ", v, "l[1];; ",
         T, " := ", v, "l[2]"
       ],
       "need_command",

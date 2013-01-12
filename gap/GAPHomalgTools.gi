@@ -28,13 +28,6 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                
                IsOne := r -> homalgSendBlocking( [ "IsOne(", r, ")" ] , "need_output", HOMALG_IO.Pictograms.IsOne ) = "true",
                
-               Minus :=
-                 function( a, b )
-                   
-                   return SI_\-( Eval( a )!.matrix, Eval( b )!.matrix );
-                   
-                 end,
-               
                IsUnit := #FIXME: just for polynomial rings(?)
                  function( R, u )
                    
@@ -42,31 +35,10 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               IsUnit_Z := #FIXME: just for polynomial rings(?)
+               XIsUnit_Z := #FIXME: just for polynomial rings(?)
                  function( R, u )
                    
                    return homalgSendBlocking( [ "( ", u, " == 1 || ", u, " == -1 )" ], "need_output", HOMALG_IO.Pictograms.IsUnit ) = "0";
-                   
-                 end,
-               
-               Sum :=
-                 function( a, b )
-                   
-                   return SI_\+( a, b );
-                   
-                 end,
-               
-               Product :=
-                 function( a, b )
-                   
-                   return SI_\*( a, b );
-                   
-                 end,
-               
-               Gcd :=
-                 function( a, b )
-                   
-                   return SI_gcd( a, b );
                    
                  end,
                
@@ -82,16 +54,16 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               ShallowCopy := C -> homalgInternalMatrixHull( SI_matrix( Eval( C )!.matrix ) ),
+               XShallowCopy := C -> homalgInternalMatrixHull( SI_matrix( Eval( C )!.matrix ) ),
                
-               CopyMatrix :=
+               XCopyMatrix :=
                  function( C, R )
                    
                    return homalgInternalMatrixHull( SI_imap( HomalgRing( C ), Eval( C )!.matrix ) );
                    
                  end,
                
-               ImportMatrix :=
+               XImportMatrix :=
                  function( M, R )
                    local r, c;
                    
@@ -132,7 +104,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                AreEqualMatrices :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ "SI_\\\=\\\=(", A, B, ")" ] , "need_output", HOMALG_IO.Pictograms.AreEqualMatrices ) = "1";
+                   return homalgSendBlocking( [ A, " = ", B ] , "need_output", HOMALG_IO.Pictograms.AreEqualMatrices ) = "true";
                    
                  end,
                
@@ -191,28 +163,28 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                MulMat :=
                  function( a, A )
                    
-                   return homalgSendBlocking( [ A, "*(", a, ")" ], HOMALG_IO.Pictograms.MulMat );
+                   return homalgSendBlocking( [ A, " * (", a, ")" ], HOMALG_IO.Pictograms.MulMat );
                    
                  end,
                
                AddMat :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ A, "+", B ], HOMALG_IO.Pictograms.AddMat );
+                   return homalgSendBlocking( [ A, " + ", B ], HOMALG_IO.Pictograms.AddMat );
                    
                  end,
                
                SubMat :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ A, "-", B ], HOMALG_IO.Pictograms.SubMat );
+                   return homalgSendBlocking( [ A, " - ", B ], HOMALG_IO.Pictograms.SubMat );
                    
                  end,
                
                Compose :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ B, "*", A ], HOMALG_IO.Pictograms.Compose ); ## ;-)
+                   return homalgSendBlocking( [ B, " * ", A ], HOMALG_IO.Pictograms.Compose ); ## ;-)
                    
                  end,
                

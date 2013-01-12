@@ -19,41 +19,6 @@ InstallValue( CommonHomalgTableForLibSingTools,
         
         rec(
                
-               Minus :=
-                 function( a, b )
-                   
-                   return SI_\-( Eval( a )!.matrix, Eval( b )!.matrix );
-                   
-                 end,
-               
-               IsUnit := #FIXME: just for polynomial rings(?)
-                 function( R, u )
-                   
-                   return SI_deg( u ) = 0;
-                   
-                 end,
-               
-               IsUnit_Z := #FIXME: just for polynomial rings(?)
-                 function( R, u )
-                   
-                   return homalgSendBlocking( [ "( ", u, " == 1 || ", u, " == -1 )" ], "need_output", HOMALG_IO.Pictograms.IsUnit ) = "0";
-                   
-                 end,
-               
-               Sum :=
-                 function( a, b )
-                   
-                   return SI_\+( a, b );
-                   
-                 end,
-               
-               Product :=
-                 function( a, b )
-                   
-                   return SI_\*( a, b );
-                   
-                 end,
-               
                Gcd :=
                  function( a, b )
                    
@@ -123,7 +88,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                AreEqualMatrices :=
                  function( A, B )
                    
-                   return SI_\=\=( Eval( A )!.matrix, Eval( B )!.matrix ) = 1;
+                   return Eval( A )!.matrix = Eval( B )!.matrix;
                    
                  end,
                
@@ -182,28 +147,28 @@ InstallValue( CommonHomalgTableForLibSingTools,
                MulMat :=
                  function( a, A )
                    
-                   return homalgInternalMatrixHull( SI_\*( a, Eval( A )!.matrix ) );
+                   return homalgInternalMatrixHull( a * Eval( A )!.matrix );
                    
                  end,
                
                AddMat :=
                  function( A, B )
                    
-                   return homalgInternalMatrixHull( SI_\+( Eval( A )!.matrix, Eval( B )!.matrix ) );
+                   return homalgInternalMatrixHull( Eval( A )!.matrix + Eval( B )!.matrix );
                    
                  end,
                
                SubMat :=
                  function( A, B )
                    
-                   return homalgInternalMatrixHull( SI_\-( Eval( A )!.matrix, Eval( B )!.matrix ) );
+                   return homalgInternalMatrixHull( Eval( A )!.matrix - Eval( B )!.matrix );
                    
                  end,
                
                Compose :=
                  function( A, B )
                    
-                   return homalgInternalMatrixHull( SI_\*( Eval( B )!.matrix, Eval( A )!.matrix ) ); ## ;-)
+                   return homalgInternalMatrixHull( Eval( B )!.matrix * Eval( A )!.matrix ); ## ;-)
                    
                  end,
                
@@ -225,20 +190,6 @@ InstallValue( CommonHomalgTableForLibSingTools,
                  function( C )
                    
                    return SI_det( Eval( C )!.matrix );
-                   
-                 end,
-               
-               XIsZeroMatrix :=
-                 function( M )
-                   
-                   return homalgSendBlocking( [ "IsZeroMatrix(", M, ")" ], "need_output", HOMALG_IO.Pictograms.IsZeroMatrix ) = "1";
-                   
-                 end,
-               
-               XIsIdentityMatrix :=
-                 function( M )
-                   
-                   return homalgSendBlocking( [ "IsIdentityMatrix(", M, ")" ], "need_output", HOMALG_IO.Pictograms.IsIdentityMatrix ) = "1";
                    
                  end,
                
