@@ -1,6 +1,6 @@
 LoadPackage( "SingularForHomalg" );
 
-Q := HomalgFieldOfRationalsInExternalSingularForHomalg( );
+Q := HomalgFieldOfRationalsInLibSing( );
 
 Qxyz := Q * "x,y,z";
 
