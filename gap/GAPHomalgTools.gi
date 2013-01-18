@@ -250,7 +250,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               XGetColumnIndependentUnitPositions :=
+               GetColumnIndependentUnitPositions :=
                  function( M, pos_list )
                    local list;
                    
@@ -261,7 +261,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   return StringToDoubleIntList( homalgSendBlocking( [ "GetColumnIndependentUnitPositions(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetColumnIndependentUnitPositions ) );
+                   return StringToDoubleIntList( homalgSendBlocking( [ "SIH_GetRowIndependentUnitPositions(", M, list, ")" ], "need_output", HOMALG_IO.Pictograms.GetColumnIndependentUnitPositions ) );
                    
                  end,
                
@@ -280,7 +280,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               XGetRowIndependentUnitPositions :=
+               GetRowIndependentUnitPositions :=
                  function( M, pos_list )
                    local list;
                    
@@ -291,7 +291,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   return StringToDoubleIntList( homalgSendBlocking( [ "GetRowIndependentUnitPositions(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetRowIndependentUnitPositions ) );
+                   return StringToDoubleIntList( homalgSendBlocking( [ "SIH_GetColumnIndependentUnitPositions(", M, list, ")" ], "need_output", HOMALG_IO.Pictograms.GetRowIndependentUnitPositions ) );
                    
                  end,
                
@@ -310,7 +310,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               XGetUnitPosition :=
+               GetUnitPosition :=
                  function( M, pos_list )
                    local list, list_string;
                    
@@ -320,7 +320,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   list_string := homalgSendBlocking( [ "GetUnitPosition(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetUnitPosition );
+                   list_string := homalgSendBlocking( [ "SIH_GetUnitPosition(", M, list, ")" ], "need_output", HOMALG_IO.Pictograms.GetUnitPosition );
                    
                    if list_string = "fail" then
                        return fail;

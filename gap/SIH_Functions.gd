@@ -35,3 +35,9 @@ DeclareGlobalFunction( "SIH_Submatrix" );
 DeclareGlobalFunction( "SIH_UnionOfRows" );
 
 DeclareGlobalFunction( "SIH_UnionOfColumns" );
+
+DeclareGlobalFunction( "SIH_GetColumnIndependentUnitPositions" );
+
+DeclareGlobalFunction( "SIH_GetRowIndependentUnitPositions" );
+
+DeclareGlobalFunction( "SIH_GetUnitPosition" );

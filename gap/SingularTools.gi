@@ -214,7 +214,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                    
                  end,
                
-               XGetColumnIndependentUnitPositions :=
+               GetColumnIndependentUnitPositions :=
                  function( M, pos_list )
                    local list;
                    
@@ -225,7 +225,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   return StringToDoubleIntList( homalgSendBlocking( [ "GetColumnIndependentUnitPositions(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetColumnIndependentUnitPositions ) );
+                   return SIH_GetRowIndependentUnitPositions( Eval( M )!.matrix, list );
                    
                  end,
                
@@ -244,7 +244,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                    
                  end,
                
-               XGetRowIndependentUnitPositions :=
+               GetRowIndependentUnitPositions :=
                  function( M, pos_list )
                    local list;
                    
@@ -255,7 +255,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   return StringToDoubleIntList( homalgSendBlocking( [ "GetRowIndependentUnitPositions(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetRowIndependentUnitPositions ) );
+                   return SIH_GetColumnIndependentUnitPositions( Eval( M )!.matrix, list );
                    
                  end,
                
@@ -274,7 +274,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                    
                  end,
                
-               XGetUnitPosition :=
+               GetUnitPosition :=
                  function( M, pos_list )
                    local list, list_string;
                    
@@ -284,13 +284,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                        list := pos_list;
                    fi;
                    
-                   list_string := homalgSendBlocking( [ "GetUnitPosition(", M, ", list (", list, "))" ], "need_output", HOMALG_IO.Pictograms.GetUnitPosition );
-                   
-                   if list_string = "fail" then
-                       return fail;
-                   else
-                       return StringToIntList( list_string );
-                   fi;
+                   return SIH_GetUnitPosition( Eval( M )!.matrix, list );
                    
                  end,
                
