@@ -143,7 +143,7 @@ InstallGlobalFunction( SIH_Submatrix,
   function( M, row_range, col_range )
     local N;
     
-    N := Flat( List( row_range, r -> List( col_range, c -> SI_\[( M , r, c ) ) ) );
+    N := Flat( List( row_range, r -> List( col_range, c -> SI_\[( M, r, c ) ) ) );
     
     return SI_matrix( Length( row_range ), Length( col_range ), N );
     

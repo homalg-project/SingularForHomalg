@@ -18,11 +18,11 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
         
         rec(
                
-               Zero := HomalgExternalRingElement( R -> homalgSendBlocking( [ "Zero( ", R, " )" ], HOMALG_IO.Pictograms.One ), "GAP", IsZero ),
+               Zero := HomalgExternalRingElement( R -> homalgSendBlocking( [ "Zero(", R, ")" ], HOMALG_IO.Pictograms.One ), "GAP", IsZero ),
                
-               One := HomalgExternalRingElement( R -> homalgSendBlocking( [ "One( ", R, " )" ], HOMALG_IO.Pictograms.One ), "GAP", IsOne ),
+               One := HomalgExternalRingElement( R -> homalgSendBlocking( [ "One(", R, ")" ], HOMALG_IO.Pictograms.One ), "GAP", IsOne ),
                
-               MinusOne := HomalgExternalRingElement( R -> homalgSendBlocking( [ "-One( ", R, " )" ], HOMALG_IO.Pictograms.MinusOne ), "GAP", IsMinusOne ),
+               MinusOne := HomalgExternalRingElement( R -> homalgSendBlocking( [ "-One(", R, ")" ], HOMALG_IO.Pictograms.MinusOne ), "GAP", IsMinusOne ),
                
                IsZero := r -> homalgSendBlocking( [ "IsZero(", r, ")" ] , "need_output", HOMALG_IO.Pictograms.IsZero ) = "true",
                
@@ -31,7 +31,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                IsUnit := #FIXME: just for polynomial rings(?)
                  function( R, u )
                    
-                   return homalgSendBlocking( [ "SI_deg( ", u, " )" ], "need_output", HOMALG_IO.Pictograms.IsUnit ) = "0";
+                   return homalgSendBlocking( [ "SI_deg(", u, ")" ], "need_output", HOMALG_IO.Pictograms.IsUnit ) = "0";
                    
                  end,
                
@@ -97,7 +97,7 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    r := NrRows( C );
                    
                    ## do not use anything which invokes SI_transpose here
-                   return homalgSendBlocking( [ "SI_matrix( SI_freemodule( ", R, r, " ) )" ], HOMALG_IO.Pictograms.IdentityMatrix );
+                   return homalgSendBlocking( [ "SI_matrix(SI_freemodule(", R, r, "))" ], HOMALG_IO.Pictograms.IdentityMatrix );
                    
                  end,
                

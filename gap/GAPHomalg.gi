@@ -119,7 +119,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInExternalLibSing,
     R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
     
     ## the above code is copied and still unused
-    R := "SI_ring( 0, [ \"dummy_variable\" ] )";
+    R := "SI_ring(0,[\"dummy_variable\"])";
     
     ## ugly hack
     R := RingForHomalgInExternalGAP( TheTypeHomalgExternalLibSingObjectRing, R, TheTypeHomalgExternalLibSingRing );
@@ -227,7 +227,7 @@ InstallMethod( CreateHomalgMatrixFromString,
     
     RemoveCharacters( s, "\[\]\\\n\"\ " );
     
-    s := homalgSendBlocking( [ "SI_transpose( SI_matrix(", R!.ring, r, c, ",\"", s, "\") )" ], HOMALG_IO.Pictograms.HomalgMatrix );
+    s := homalgSendBlocking( [ "SI_transpose(SI_matrix(", R!.ring, r, c, ",\"", s, "\"))" ], HOMALG_IO.Pictograms.HomalgMatrix );
     
     return HomalgMatrix( s, r, c, R );
     
