@@ -143,20 +143,17 @@ InstallValue( CommonHomalgTableForExternalLibSingTools,
                    
                  end,
                
-               XDiagMat :=
+               DiagMat :=
                  function( e )
-                   local f;
                    
-                   f := Concatenation( [ "dsum(" ], e, [ ")" ] );
-                   
-                   return homalgSendBlocking( f, [ "matrix" ], [ "[", Sum( List( e, NrColumns ) ), "][", Sum( List( e, NrRows ) ), "]" ], HOMALG_IO.Pictograms.DiagMat );
+                   return homalgSendBlocking( Concatenation( [ "SIL_dsum(" ], e, [ ")" ] ), HOMALG_IO.Pictograms.DiagMat );
                    
                  end,
                
-               XKroneckerMat :=
+               KroneckerMat :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ "tensor(", A, B, ")" ], [ "matrix" ], [ "[", NrColumns( A ) * NrColumns( B ), "][", NrRows( A ) * NrRows( B ), "]" ], HOMALG_IO.Pictograms.KroneckerMat );
+                   return homalgSendBlocking( [ "SIL_tensor(", A, B, ")" ], HOMALG_IO.Pictograms.KroneckerMat );
                    
                  end,
                

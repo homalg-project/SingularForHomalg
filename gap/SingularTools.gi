@@ -15,6 +15,8 @@
 #
 ####################################
 
+SI_LIB( "matrix.lib" );
+
 InstallValue( CommonHomalgTableForLibSingTools,
         
         rec(
@@ -127,20 +129,19 @@ InstallValue( CommonHomalgTableForLibSingTools,
                    
                  end,
                
+               ## activation causes segfaults
                XDiagMat :=
                  function( e )
-                   local f;
                    
-                   f := Concatenation( [ "dsum(" ], e, [ ")" ] );
-                   
-                   return homalgSendBlocking( f, [ "matrix" ], [ "[", Sum( List( e, NrColumns ) ), "][", Sum( List( e, NrRows ) ), "]" ], HOMALG_IO.Pictograms.DiagMat );
+                   return homalgInternalMatrixHull( CallFuncList( SIL_dsum, List( e, M -> Eval( M )!.matrix ) ) );
                    
                  end,
                
+               ## activation causes segfaults
                XKroneckerMat :=
                  function( A, B )
                    
-                   return homalgSendBlocking( [ "tensor(", A, B, ")" ], [ "matrix" ], [ "[", NrColumns( A ) * NrColumns( B ), "][", NrRows( A ) * NrRows( B ), "]" ], HOMALG_IO.Pictograms.KroneckerMat );
+                   return homalgInternalMatrixHull( SIL_tensor( Eval( A )!.matrix, Eval( B )!.matrix ) );
                    
                  end,
                

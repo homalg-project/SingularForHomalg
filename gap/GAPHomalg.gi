@@ -48,7 +48,7 @@ InstallValue( RingMacrosForGAPWithLibSing,
             
             _Identifier := "libsing",
             
-            ("!init_string_libsing") := "LoadPackage(\"libsing\")",
+            ("!init_string_libsing") := "LoadPackage(\"libsing\");;SI_LIB(\"matrix.lib\")",
             
             )
         
