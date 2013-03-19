@@ -14,6 +14,8 @@
 #
 ####################################
 
+SI_option("notWarnSB");
+
 ####################################
 #
 # representations, families, and types:
