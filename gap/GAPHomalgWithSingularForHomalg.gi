@@ -88,13 +88,17 @@ InstallMethod( PolynomialRing,
     
     S := CreateHomalgExternalRing( ext_obj, TheTypeHomalgExternalRingInGAP );
     
+    RP := homalgTable( S );
+    
+    RP!.RingElement := R -> r -> homalgSendBlocking( [ "\"", r, "\"/", R ], HOMALG_IO.Pictograms.define );
+    
     if IsBound( r!.MinimalPolynomialOfPrimitiveElement ) then
         homalgSendBlocking( [ "minpoly=", r!.MinimalPolynomialOfPrimitiveElement ], "need_command", S, HOMALG_IO.Pictograms.define );
     fi;
     
     var := List( var, a -> HomalgExternalRingElement( a, S ) );
     
-    Perform( var, function( v ) SetName( v, homalgPointer( v ) ); end );
+    Perform( var, Name );
     
     SetIsFreePolynomialRing( S, true );
     
