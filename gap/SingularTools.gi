@@ -130,7 +130,7 @@ InstallValue( CommonHomalgTableForLibSingTools,
                  end,
                
                ## activation causes segfaults
-               XDiagMat :=
+               DiagMat :=
                  function( e )
                    
                    return homalgInternalMatrixHull( CallFuncList( SIL_dsum, List( e, M -> Eval( M )!.matrix ) ) );
