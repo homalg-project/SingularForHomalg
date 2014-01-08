@@ -1,0 +1,16 @@
+@Chapter Examples
+
+@Section Purity with LibSing
+@InsertSystem Purity_LibSing
+
+@Section Purity with external LibSing
+@InsertSystem Purity_ExternalLibSing
+
+@Section Purity with LibSingular
+@InsertSystem Purity_LibSingular
+
+@Section Purity with external SingularForHomalg
+@InsertSystem Purity_ExternalSingularForHomalg
+
+@Section A3_Purity with LibSingular
+@InsertSystem A3_Purity_LibSingular

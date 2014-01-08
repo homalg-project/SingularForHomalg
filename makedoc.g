@@ -2,15 +2,23 @@ LoadPackage( "AutoDoc" );
 
 AutoDoc( "SingularForHomalg" :
         
-        scaffold := rec( entities := [ "homalg", "GAP4" ],
+        scaffold := rec( entities := [
+                            "homalg",
+                            "GAP4",
+                            "Singular",
+                            "libsing",
+                            "IO",
+                            "IO_ForHomalg",
+                            ],
                          ),
         
-        autodoc := rec( files := [  ] ),
+        autodoc := rec( files := [ "doc/Intros.autodoc" ] ),
         
         maketest := rec( folder := ".",
                          commands :=
                          [ "LoadPackage( \"SingularForHomalg\" );",
                            "LoadPackage( \"IO_ForHomalg\" );",
+                           "LoadPackage( \"Modules\" );",
                            "HOMALG_IO.show_banners := false;",
                            "HOMALG_IO.suppress_PID := true;",
                            "HOMALG_IO.use_common_stream := true;",
