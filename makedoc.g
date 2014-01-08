@@ -1,23 +1,27 @@
-##  this creates the documentation, needs: GAPDoc package, latex, pdflatex,
-##  mkindex, dvips
-##  
-##  Call this with GAP.
-##
+LoadPackage( "AutoDoc" );
 
-LoadPackage( "GAPDoc" );
+AutoDoc( "SingularForHomalg" :
+        
+        scaffold := rec( entities := [ "homalg", "GAP4" ],
+                         ),
+        
+        autodoc := rec( files := [  ] ),
+        
+        maketest := rec( folder := ".",
+                         commands :=
+                         [ "LoadPackage( \"SingularForHomalg\" );",
+                           "LoadPackage( \"IO_ForHomalg\" );",
+                           "HOMALG_IO.show_banners := false;",
+                           "HOMALG_IO.suppress_PID := true;",
+                           "HOMALG_IO.use_common_stream := true;",
+                           ],
+                         ),
+        
+        Bibliography := "SingularForHomalg.bib"
+        
+);
 
-SetGapDocLaTeXOptions( "utf8" );
-
-bib := ParseBibFiles( "doc/SingularForHomalg.bib" );
-WriteBibXMLextFile( "doc/SingularForHomalgBib.xml", bib );
-
-Read( "ListOfDocFiles.g" );
-
+# Create VERSION file for "make towww"
 PrintTo( "VERSION", PackageInfo( "SingularForHomalg" )[1].Version );
 
-MakeGAPDocDoc( "doc", "SingularForHomalg", list, "SingularForHomalg" );
-
-GAPDocManualLab( "SingularForHomalg" );
-
 QUIT;
-

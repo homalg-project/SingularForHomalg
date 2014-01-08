@@ -2,23 +2,23 @@ all: doc test
 
 doc: doc/manual.six
 
-doc/manual.six: makedoc.g maketest.g ListOfDocFiles.g \
+doc/manual.six: makedoc.g \
 		PackageInfo.g \
-		doc/SingularForHomalg.bib doc/*.xml doc/*.css \
+		doc/SingularForHomalg.bib \
 		gap/*.gd gap/*.gi examples/*.g
-	        gapdev makedoc.g
+	        gap makedoc.g
 
 clean:
 	(cd doc ; ./clean)
 
 test:	doc
-	gapdev maketest.g
+	gap maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/SingularForHomalg.tar.gz --exclude ".DS_Store" --exclude "*~" SingularForHomalg/doc/*.* SingularForHomalg/doc/clean SingularForHomalg/gap/*.{gi,gd} SingularForHomalg/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g,ListOfDocFiles.g} SingularForHomalg/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/SingularForHomalg.tar.gz --exclude ".DS_Store" --exclude "*~" SingularForHomalg/doc/*.* SingularForHomalg/doc/clean SingularForHomalg/gap/*.{gi,gd} SingularForHomalg/{PackageInfo.g,README,COPYING,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} SingularForHomalg/examples/*.g SingularForHomalg/examples/doc/*.g)
 
 WEBPOS=public_html
-WEBPOS_FINAL=~/public_html/SingularForHomalg
+WEBPOS_FINAL=~/Sites/homalg-project/SingularForHomalg
 
 towww: archive
 	echo '<?xml version="1.0" encoding="UTF-8"?>' >${WEBPOS}.version
