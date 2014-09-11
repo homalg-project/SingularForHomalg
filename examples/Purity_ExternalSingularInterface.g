@@ -1,13 +1,11 @@
-#! @System Purity_LibSing
+#! @System Purity_ExternalSingularInterface
 
 LoadPackage( "SingularForHomalg" );
 
-#!  This examples tests &Singular;'s interpreter procedures
-#!  which have been automatically wrapped by &libsing;.
-#!  This is Example B.3 in <Cite Key="BaSF"/>.
+#!  This is like the previous example but in an external &GAP;.
 
 #! @Example
-R := HomalgFieldOfRationalsInLibSing( ) * "x,y,z";
+R := HomalgFieldOfRationalsInExternalSingularInterface( ) * "x,y,z";
 #! Q[x,y,z]
 wmat := HomalgMatrix( "[ \
 xy,  yz,    z,        0,         0,    \
@@ -17,7 +15,7 @@ x4,  x3z,  0,        x2z,     -xz, \
 0,    0,      x2z,    -xyz,    yz,  \
 0,    0,      x2y-x2,-xy2+xy,y2-y \
 ]", 6, 5, R );
-#! <A 6 x 5 matrix over an internal ring>
+#! <A 6 x 5 matrix over an external ring>
 LoadPackage( "Modules" );
 #! true
 W := LeftPresentation( wmat );

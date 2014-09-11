@@ -4,7 +4,8 @@
 ##
 ##  Copyright 2012-2013, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for the external computer algebra system GAP with SingularForHomalg.
+##  Implementations for the external computer algebra system GAP
+##  with SingularForHomalg.
 ##
 #############################################################################
 
@@ -44,12 +45,12 @@ UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithSingularForHomalg );
 #
 ####################################
 
-## talk with libsing via external gap equipped with the SingularForHomalg package
+## talk with SingularInterface via external gap equipped with the SingularForHomalg package
 InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularForHomalg,
   function( arg )
     local R;
     
-    R := "HomalgFieldOfRationalsInLibSing( )";
+    R := "HomalgFieldOfRationalsInSingularInterface( )";
     
     R := Concatenation( [ R ], [ IsPrincipalIdealRing ], arg );
     
@@ -81,9 +82,9 @@ InstallMethod( PolynomialRing,
     
     ## create the new ring
     if HasIsIntegersForHomalg( r ) and IsIntegersForHomalg( r ) then
-        ext_obj := homalgSendBlocking( [ "HomalgRingOfIntegersInLibSing(", param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "HomalgRingOfIntegersInSingularInterface(", param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     else
-        ext_obj := homalgSendBlocking( [ "HomalgFieldOfRationalsInLibSing(", Characteristic( R ), param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "HomalgFieldOfRationalsInSingularInterface(", Characteristic( R ), param, ")*", var ], TheTypeHomalgExternalRingObjectInGAP, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     fi;
     
     S := CreateHomalgExternalRing( ext_obj, TheTypeHomalgExternalRingInGAP );

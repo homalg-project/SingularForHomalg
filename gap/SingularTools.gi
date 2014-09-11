@@ -17,7 +17,7 @@
 
 SI_LIB( "matrix.lib" );
 
-InstallValue( CommonHomalgTableForLibSingTools,
+InstallValue( CommonHomalgTableForSingularInterfaceTools,
         
         rec(
                

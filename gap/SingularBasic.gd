@@ -14,4 +14,4 @@
 #
 ####################################
 
-DeclareGlobalVariable( "CommonHomalgTableForLibSingBasic" );
+DeclareGlobalVariable( "CommonHomalgTableForSingularInterfaceBasic" );

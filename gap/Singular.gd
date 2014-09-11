@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declarations to use Singular via libsing.
+##  Declarations to use Singular via SingularInterface.
 ##
 #############################################################################
 
@@ -16,6 +16,6 @@
 
 # constructors:
 
-DeclareGlobalFunction( "HomalgFieldOfRationalsInLibSing" );
+DeclareGlobalFunction( "HomalgFieldOfRationalsInSingularInterface" );
 
-DeclareGlobalFunction( "HomalgRingOfIntegersInLibSing" );
+DeclareGlobalFunction( "HomalgRingOfIntegersInSingularInterface" );

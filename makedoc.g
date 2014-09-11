@@ -6,7 +6,7 @@ AutoDoc( "SingularForHomalg" :
                             "homalg",
                             "GAP4",
                             "Singular",
-                            "libsing",
+                            "SingularInterface",
                             "IO",
                             "IO_ForHomalg",
                             ],

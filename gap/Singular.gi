@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations to use Singular via libsing.
+##  Implementations to use Singular via SingularInterface.
 ##
 #############################################################################
 
@@ -23,14 +23,14 @@ SI_option("notWarnSB");
 ####################################
 
 ##
-DeclareRepresentation( "IsHomalgLibSingRingRep",
+DeclareRepresentation( "IsHomalgSingularInterfaceRingRep",
         IsHomalgInternalRingRep,
         [ "ring", "homalgTable" ] );
 
 ##
-BindGlobal( "TheTypeHomalgLibSingRing",
+BindGlobal( "TheTypeHomalgSingularInterfaceRing",
         NewType( TheFamilyOfHomalgRings,
-                IsHomalgLibSingRingRep ) );
+                IsHomalgSingularInterfaceRingRep ) );
 
 ####################################
 #
@@ -46,8 +46,8 @@ BindGlobal( "TheTypeHomalgLibSingRing",
 
 ##
 InstallMethod( IsUnit,
-        "for libsing ring elements",
-        [ IsHomalgLibSingRingRep, IsRingElement ],
+        "for SingularInterface ring elements",
+        [ IsHomalgSingularInterfaceRingRep, IsRingElement ],
         
   function( R, r )
     
@@ -58,7 +58,7 @@ end );
 ##
 InstallMethod( MatElm,
         "for homalg internal matrices",
-        [ IsHomalgInternalMatrixRep, IsPosInt, IsPosInt, IsHomalgLibSingRingRep ],
+        [ IsHomalgInternalMatrixRep, IsPosInt, IsPosInt, IsHomalgSingularInterfaceRingRep ],
         
   function( M, r, c, R )
     
@@ -72,8 +72,8 @@ end );
 #
 ####################################
 
-## talk with libsingular via the GAP package libsing
-InstallGlobalFunction( HomalgFieldOfRationalsInLibSing,
+## talk with SingularInterfaceular via the GAP package SingularInterface
+InstallGlobalFunction( HomalgFieldOfRationalsInSingularInterface,
   function( arg )
     local nargs, param, minimal_polynomial, Q, R;
     
@@ -94,7 +94,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSing,
             arg := arg{[ 2 .. nargs - 1 ]};
         fi;
         
-        Q := CallFuncList( HomalgFieldOfRationalsInLibSing, arg );
+        Q := CallFuncList( HomalgFieldOfRationalsInSingularInterface, arg );
         
         R := [ "(0,", JoinStringsWithSeparator( param ), "),dummy_variable,dp" ];
         
@@ -109,7 +109,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInLibSing,
     ## the above code is copied and still unused
     R := SI_ring( 0, [ "dummy_variable" ] );
     
-    R := CreateHomalgRing( R, [ TheTypeHomalgLibSingRing, TheTypeHomalgInternalMatrix ] );
+    R := CreateHomalgRing( R, [ TheTypeHomalgSingularInterfaceRing, TheTypeHomalgInternalMatrix ] );
     
     if IsBound( minimal_polynomial ) then
         ## FIXME: we assume the polynomial is irreducible of degree > 1
@@ -144,7 +144,7 @@ end );
 ##
 InstallMethod( PolynomialRing,
         "for homalg rings in Singular",
-        [ IsHomalgLibSingRingRep, IsList ],
+        [ IsHomalgSingularInterfaceRingRep, IsList ],
         
   function( R, indets )
     local ar, r, var, nr_var, properties, param, ext_obj, S, l, RP;
@@ -164,7 +164,7 @@ InstallMethod( PolynomialRing,
         ext_obj := SI_ring( Characteristic( R ), var );
     fi;
     
-    S := CreateHomalgRing( ext_obj, [ TheTypeHomalgLibSingRing, TheTypeHomalgInternalMatrix ] );
+    S := CreateHomalgRing( ext_obj, [ TheTypeHomalgSingularInterfaceRing, TheTypeHomalgInternalMatrix ] );
     
     if IsBound( r!.MinimalPolynomialOfPrimitiveElement ) then
         homalgSendBlocking( [ "minpoly=", r!.MinimalPolynomialOfPrimitiveElement ], "need_command", S, HOMALG_IO.Pictograms.define );
@@ -216,7 +216,7 @@ end );
 ##
 InstallMethod( \/,
         "for ring elements",
-        [ IsString, IsHomalgLibSingRingRep ],
+        [ IsString, IsHomalgSingularInterfaceRingRep ],
         
   function( r, R )
     
@@ -227,7 +227,7 @@ end );
 ##
 InstallMethod( \/,
         "for ring elements",
-        [ IsRingElement, IsHomalgLibSingRingRep ],
+        [ IsRingElement, IsHomalgSingularInterfaceRingRep ],
         
   function( r, R )
     
@@ -238,7 +238,7 @@ end );
 ##
 InstallMethod( CreateHomalgMatrixFromString,
         "constructor for homalg matrices",
-        [ IsString, IsInt, IsInt, IsHomalgLibSingRingRep ],
+        [ IsString, IsInt, IsInt, IsHomalgSingularInterfaceRingRep ],
         
   function( S, r, c, R )
     local s;
@@ -256,7 +256,7 @@ end );
 ##
 InstallMethod( CreateHomalgMatrixFromList,
         "constructor for homalg matrices",
-        [ IsList, IsInt, IsInt, IsHomalgLibSingRingRep ],
+        [ IsList, IsInt, IsInt, IsHomalgSingularInterfaceRingRep ],
         
   function( M, r, c, R )
     
@@ -274,12 +274,12 @@ end );
 
 ##
 InstallMethod( Display,
-        "for homalg LibSing matrices",
+        "for homalg SingularInterface matrices",
         [ IsHomalgInternalMatrixRep ], 1,
         
   function( o )
     
-    if not IsHomalgLibSingRingRep( HomalgRing( o ) ) then
+    if not IsHomalgSingularInterfaceRingRep( HomalgRing( o ) ) then
         
         TryNextMethod( );
         

@@ -1,6 +1,6 @@
 LoadPackage( "SingularForHomalg" );
 
-Q := HomalgFieldOfRationalsInExternalLibSing( );
+Q := HomalgFieldOfRationalsInExternalSingularInterface( );
 
 SetAssertionLevel( 6 );
 

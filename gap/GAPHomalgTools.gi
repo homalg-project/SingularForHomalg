@@ -4,7 +4,8 @@
 ##
 ##  Copyright 2013, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for the external computer algebra system GAP with LibSing.
+##  Implementations for the external computer algebra system
+##  GAP with SingularInterface.
 ##
 #############################################################################
 
@@ -14,7 +15,7 @@
 #
 ####################################
 
-InstallValue( CommonHomalgTableForExternalLibSingTools,
+InstallValue( CommonHomalgTableForExternalSingularInterfaceTools,
         
         rec(
                

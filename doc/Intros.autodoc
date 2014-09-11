@@ -1,10 +1,10 @@
 @Chapter Examples
 
-@Section Purity with LibSing
-@InsertSystem Purity_LibSing
+@Section Purity with SingularInterface
+@InsertSystem Purity_SingularInterface
 
-@Section Purity with external LibSing
-@InsertSystem Purity_ExternalLibSing
+@Section Purity with external SingularInterface
+@InsertSystem Purity_ExternalSingularInterface
 
 @Section Purity with LibSingular
 @InsertSystem Purity_LibSingular

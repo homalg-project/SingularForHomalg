@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Declarations to use Singular's interpreter via libsing.
+##  Declarations to use Singular's interpreter via SingularInterface.
 ##
 #############################################################################
 

@@ -4,7 +4,8 @@
 ##
 ##  Copyright 2013, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for the external computer algebra system GAP with LibSing.
+##  Implementations for the external computer algebra system GAP
+##  with SingularInterface.
 ##
 #############################################################################
 
@@ -14,15 +15,15 @@
 #
 ####################################
 
-InstallValue( CommonHomalgTableForExternalLibSingBasic,
+InstallValue( CommonHomalgTableForExternalSingularInterfaceBasic,
         
         rec(
                ## Must only then be provided by the RingPackage in case the default
                ## "service" function does not match the Ring
 
-##  <#GAPDoc Label="BasisOfRowModule:ExternalLibSing">
+##  <#GAPDoc Label="BasisOfRowModule:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="BasisOfRowModule" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="BasisOfRowModule" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="BasisOfRowModule" Label="Singular macro"/> inside the computer algebra system.
@@ -51,9 +52,9 @@ BasisOfRowModule :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="BasisOfColumnModule:ExternalLibSing">
+##  <#GAPDoc Label="BasisOfColumnModule:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="BasisOfColumnModule" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="BasisOfColumnModule" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="BasisOfColumnModule" Label="Singular macro"/> inside the computer algebra system.
@@ -82,9 +83,9 @@ BasisOfColumnModule :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="BasisOfRowsCoeff:ExternalLibSing">
+##  <#GAPDoc Label="BasisOfRowsCoeff:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M, T" Name="BasisOfRowsCoeff" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M, T" Name="BasisOfRowsCoeff" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="BasisOfRowsCoeff" Label="Singular macro"/> inside the computer algebra system.
@@ -119,9 +120,9 @@ BasisOfRowsCoeff :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="BasisOfColumnsCoeff:ExternalLibSing">
+##  <#GAPDoc Label="BasisOfColumnsCoeff:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M, T" Name="BasisOfColumnsCoeff" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M, T" Name="BasisOfColumnsCoeff" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="BasisOfColumnsCoeff" Label="Singular macro"/> inside the computer algebra system.
@@ -156,9 +157,9 @@ BasisOfColumnsCoeff :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="DecideZeroRows:ExternalLibSing">
+##  <#GAPDoc Label="DecideZeroRows:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="A, B" Name="DecideZeroRows" Label="in the homalg table for LibSing"/>
+##    <Func Arg="A, B" Name="DecideZeroRows" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="DecideZeroRows" Label="Singular macro"/> inside the computer algebra system.
@@ -187,9 +188,9 @@ DecideZeroRows :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="DecideZeroColumns:ExternalLibSing">
+##  <#GAPDoc Label="DecideZeroColumns:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="A, B" Name="DecideZeroColumns" Label="in the homalg table for LibSing"/>
+##    <Func Arg="A, B" Name="DecideZeroColumns" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="DecideZeroColumns" Label="Singular macro"/> inside the computer algebra system.
@@ -218,9 +219,9 @@ DecideZeroColumns :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="DecideZeroRowsEffectively:ExternalLibSing">
+##  <#GAPDoc Label="DecideZeroRowsEffectively:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="A, B, T" Name="DecideZeroRowsEffectively" Label="in the homalg table for LibSing"/>
+##    <Func Arg="A, B, T" Name="DecideZeroRowsEffectively" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="DecideZeroRowsEffectively" Label="Singular macro"/> inside the computer algebra system.
@@ -255,9 +256,9 @@ DecideZeroRowsEffectively :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="DecideZeroColumnsEffectively:ExternalLibSing">
+##  <#GAPDoc Label="DecideZeroColumnsEffectively:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="A, B, T" Name="DecideZeroColumnsEffectively" Label="in the homalg table for LibSing"/>
+##    <Func Arg="A, B, T" Name="DecideZeroColumnsEffectively" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="DecideZeroColumnsEffectively" Label="Singular macro"/> inside the computer algebra system.
@@ -292,9 +293,9 @@ DecideZeroColumnsEffectively :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="SyzygiesGeneratorsOfRows:ExternalLibSing">
+##  <#GAPDoc Label="SyzygiesGeneratorsOfRows:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="SyzygiesGeneratorsOfRows" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="SyzygiesGeneratorsOfRows" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="SyzygiesGeneratorsOfRows" Label="Singular macro"/> inside the computer algebra system.
@@ -323,9 +324,9 @@ SyzygiesGeneratorsOfRows :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="SyzygiesGeneratorsOfColumns:ExternalLibSing">
+##  <#GAPDoc Label="SyzygiesGeneratorsOfColumns:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="SyzygiesGeneratorsOfColumns" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="SyzygiesGeneratorsOfColumns" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="SyzygiesGeneratorsOfColumns" Label="Singular macro"/> inside the computer algebra system.
@@ -354,9 +355,9 @@ SyzygiesGeneratorsOfColumns :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="RelativeSyzygiesGeneratorsOfRows:ExternalLibSing">
+##  <#GAPDoc Label="RelativeSyzygiesGeneratorsOfRows:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M, M2" Name="RelativeSyzygiesGeneratorsOfRows" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M, M2" Name="RelativeSyzygiesGeneratorsOfRows" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="RelativeSyzygiesGeneratorsOfRows" Label="Singular macro"/> inside the computer algebra system.
@@ -385,9 +386,9 @@ RelativeSyzygiesGeneratorsOfRows :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="RelativeSyzygiesGeneratorsOfColumns:ExternalLibSing">
+##  <#GAPDoc Label="RelativeSyzygiesGeneratorsOfColumns:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M, M2" Name="RelativeSyzygiesGeneratorsOfColumns" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M, M2" Name="RelativeSyzygiesGeneratorsOfColumns" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="RelativeSyzygiesGeneratorsOfColumns" Label="Singular macro"/> inside the computer algebra system.
@@ -416,9 +417,9 @@ RelativeSyzygiesGeneratorsOfColumns :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="ReducedSyzygiesGeneratorsOfRows:ExternalLibSing">
+##  <#GAPDoc Label="ReducedSyzygiesGeneratorsOfRows:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="ReducedSyzygiesGeneratorsOfRows" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="ReducedSyzygiesGeneratorsOfRows" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="ReducedSyzygiesGeneratorsOfRows" Label="Singular macro"/> inside the computer algebra system.
@@ -445,9 +446,9 @@ XReducedSyzygiesGeneratorsOfRows :=
 ##  </ManSection>
 ##  <#/GAPDoc>
 
-##  <#GAPDoc Label="ReducedSyzygiesGeneratorsOfColumns:ExternalLibSing">
+##  <#GAPDoc Label="ReducedSyzygiesGeneratorsOfColumns:ExternalSingularInterface">
 ##  <ManSection>
-##    <Func Arg="M" Name="ReducedSyzygiesGeneratorsOfColumns" Label="in the homalg table for LibSing"/>
+##    <Func Arg="M" Name="ReducedSyzygiesGeneratorsOfColumns" Label="in the homalg table for SingularInterface"/>
 ##    <Returns></Returns>
 ##    <Description>
 ##      This is the entry of the &homalg; table, which calls the corresponding macro <Ref Func="ReducedSyzygiesGeneratorsOfColumns" Label="Singular macro"/> inside the computer algebra system.

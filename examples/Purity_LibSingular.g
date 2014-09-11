@@ -2,7 +2,7 @@
 
 LoadPackage( "SingularForHomalg" );
 
-#!  Loading &SingularForHomalg; makes &libsing; the default
+#!  Loading &SingularForHomalg; makes &SingularInterface; the default
 #!  communication <Q>stream</Q> instead of &IO;/&IO_ForHomalg;.
 #!  This is Example B.3 in <Cite Key="BaSF"/>.
 

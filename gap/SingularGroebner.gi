@@ -29,14 +29,14 @@ InstallMethod( CreateHomalgTable,
     AppendToAhomalgTable( RP, CommonHomalgTableForRings );
     
     ## RP_Tools
-    AppendToAhomalgTable( RP, CommonHomalgTableForLibSingTools );
+    AppendToAhomalgTable( RP, CommonHomalgTableForSingularInterfaceTools );
     
     ## RP_Basic
-    AppendToAhomalgTable( RP, CommonHomalgTableForLibSingBasic );
+    AppendToAhomalgTable( RP, CommonHomalgTableForSingularInterfaceBasic );
     
     #todo: insert again, as soon as Singular really computes smith forms
     #if HasPrincipalIdealRing( singular_ring ) and IsPrincipalIdealRing( singular_ring ) then
-    #    AppendToAhomalgTable( RP, CommonHomalgTableForLibSingBestBasis );
+    #    AppendToAhomalgTable( RP, CommonHomalgTableForSingularInterfaceBestBasis );
     #fi;
     
     Objectify( TheTypeHomalgTable, RP );

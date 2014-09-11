@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations to use Singular's interpreter via libsing.
+##  Implementations to use Singular's interpreter via SingularInterface.
 ##
 #############################################################################
 
@@ -39,7 +39,7 @@ InstallGlobalFunction( LaunchCASLibSingularForHomalg,
   function( arg )
     local success, s;
     
-    success := LoadPackage( "libsing" );
+    success := LoadPackage( "SingularInterface" );
     
     if success = true then
         

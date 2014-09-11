@@ -14,7 +14,7 @@
 #
 ####################################
 
-InstallValue( CommonHomalgTableForLibSingBestBasis,
+InstallValue( CommonHomalgTableForSingularInterfaceBestBasis,
         
         rec(
                ## Can optionally be provided by the RingPackage

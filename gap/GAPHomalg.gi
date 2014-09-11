@@ -4,7 +4,7 @@
 ##
 ##  Copyright 2012-2013, Mohamed Barakat, University of Kaiserslautern
 ##
-##  Implementations for the external computer algebra system GAP with libsing.
+##  Implementations for the external computer algebra system GAP with SingularInterface.
 ##
 #############################################################################
 
@@ -15,24 +15,24 @@
 ####################################
 
 ##
-DeclareRepresentation( "IsHomalgExternalLibSingRingObjectRep",
+DeclareRepresentation( "IsHomalgExternalSingularInterfaceRingObjectRep",
         IsHomalgExternalRingObjectInGAPRep,
         [ "ring", "homalgTable" ] );
 
 ##
-BindGlobal( "TheTypeHomalgExternalLibSingObjectRing",
+BindGlobal( "TheTypeHomalgExternalSingularInterfaceObjectRing",
         NewType( TheFamilyOfHomalgRings,
-                IsHomalgExternalLibSingRingObjectRep ) );
+                IsHomalgExternalSingularInterfaceRingObjectRep ) );
 
 ##
-DeclareRepresentation( "IsHomalgExternalLibSingRingRep",
+DeclareRepresentation( "IsHomalgExternalSingularInterfaceRingRep",
         IsHomalgExternalRingInGAPRep,
         [ "ring", "homalgTable" ] );
 
 ##
-BindGlobal( "TheTypeHomalgExternalLibSingRing",
+BindGlobal( "TheTypeHomalgExternalSingularInterfaceRing",
         NewType( TheFamilyOfHomalgRings,
-                IsHomalgExternalLibSingRingRep ) );
+                IsHomalgExternalSingularInterfaceRingRep ) );
 
 ####################################
 #
@@ -41,22 +41,22 @@ BindGlobal( "TheTypeHomalgExternalLibSingRing",
 ####################################
 
 ##
-InstallValue( RingMacrosForGAPWithLibSing,
+InstallValue( RingMacrosForGAPWithSingularInterface,
         rec(
             
             _CAS_name := "gap",
             
-            _Identifier := "libsing",
+            _Identifier := "SingularInterface",
             
-            ("!init_string_libsing") := "LoadPackage(\"libsing\");;SI_LIB(\"matrix.lib\")",
+            ("!init_string_SingularInterface") := "LoadPackage(\"SingularInterface\");;SI_LIB(\"matrix.lib\")",
             
             )
         
         );
 
 ##
-UpdateMacrosOfCAS( RingMacrosForGAPWithLibSing, GAPHomalgMacros );
-UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithLibSing );
+UpdateMacrosOfCAS( RingMacrosForGAPWithSingularInterface, GAPHomalgMacros );
+UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithSingularInterface );
 
 ####################################
 #
@@ -66,8 +66,8 @@ UpdateMacrosOfLaunchedCASs( RingMacrosForGAPWithLibSing );
 
 ##
 InstallMethod( MatElm,
-        "for homalg external matrices in GAP using libsing",
-        [ IsHomalgExternalMatrixRep, IsPosInt, IsPosInt, IsHomalgExternalLibSingRingRep ],
+        "for homalg external matrices in GAP using SingularInterface",
+        [ IsHomalgExternalMatrixRep, IsPosInt, IsPosInt, IsHomalgExternalSingularInterfaceRingRep ],
         
   function( M, r, c, R )
     local ext_obj;
@@ -84,8 +84,8 @@ end );
 #
 ####################################
 
-## talk with libsing via external gap equipped with the libsing package
-InstallGlobalFunction( HomalgFieldOfRationalsInExternalLibSing,
+## talk with SingularInterface via external gap equipped with the SingularInterface package
+InstallGlobalFunction( HomalgFieldOfRationalsInExternalSingularInterface,
   function( arg )
     local nargs, param, minimal_polynomial, Q, R;
     
@@ -106,7 +106,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInExternalLibSing,
             arg := arg{[ 2 .. nargs - 1 ]};
         fi;
         
-        Q := CallFuncList( HomalgFieldOfRationalsInLibSing, arg );
+        Q := CallFuncList( HomalgFieldOfRationalsInSingularInterface, arg );
         
         R := [ "(0,", JoinStringsWithSeparator( param ), "),dummy_variable,dp" ];
         
@@ -122,7 +122,7 @@ InstallGlobalFunction( HomalgFieldOfRationalsInExternalLibSing,
     R := "SI_ring(0,[\"dummy_variable\"])";
     
     ## ugly hack
-    R := RingForHomalgInExternalGAP( TheTypeHomalgExternalLibSingObjectRing, R, TheTypeHomalgExternalLibSingRing );
+    R := RingForHomalgInExternalGAP( TheTypeHomalgExternalSingularInterfaceObjectRing, R, TheTypeHomalgExternalSingularInterfaceRing );
     
     if IsBound( minimal_polynomial ) then
         ## FIXME: we assume the polynomial is irreducible of degree > 1
@@ -156,8 +156,8 @@ end );
 
 ##
 InstallMethod( PolynomialRing,
-        "for homalg rings in external GAP equipped with libsing",
-        [ IsHomalgExternalLibSingRingRep, IsList ],
+        "for homalg rings in external GAP equipped with SingularInterface",
+        [ IsHomalgExternalSingularInterfaceRingRep, IsList ],
         
   function( R, indets )
     local ar, r, var, nr_var, properties, param, ext_obj, S, l, RP;
@@ -172,12 +172,12 @@ InstallMethod( PolynomialRing,
     
     ## create the new ring
     if HasIsIntegersForHomalg( r ) and IsIntegersForHomalg( r ) then
-        ext_obj := homalgSendBlocking( [ "XXXX(", param, ",", var, ")" ], TheTypeHomalgExternalLibSingObjectRing, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "XXXX(", param, ",", var, ")" ], TheTypeHomalgExternalSingularInterfaceObjectRing, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     else
-        ext_obj := homalgSendBlocking( [ "SI_ring(", Characteristic( R ), param, ",", var, ")" ], TheTypeHomalgExternalLibSingObjectRing, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
+        ext_obj := homalgSendBlocking( [ "SI_ring(", Characteristic( R ), param, ",", var, ")" ], TheTypeHomalgExternalSingularInterfaceObjectRing, properties, R, HOMALG_IO.Pictograms.CreateHomalgRing );
     fi;
     
-    S := CreateHomalgExternalRing( ext_obj, TheTypeHomalgExternalLibSingRing );
+    S := CreateHomalgExternalRing( ext_obj, TheTypeHomalgExternalSingularInterfaceRing );
     
     if IsBound( r!.MinimalPolynomialOfPrimitiveElement ) then
         homalgSendBlocking( [ "minpoly=", r!.MinimalPolynomialOfPrimitiveElement ], "need_command", S, HOMALG_IO.Pictograms.define );
@@ -218,7 +218,7 @@ end );
 ##
 InstallMethod( CreateHomalgMatrixFromString,
         "constructor for homalg matrices",
-        [ IsString, IsInt, IsInt, IsHomalgExternalLibSingRingRep ],
+        [ IsString, IsInt, IsInt, IsHomalgExternalSingularInterfaceRingRep ],
         
   function( S, r, c, R )
     local s;
@@ -241,12 +241,12 @@ end );
 
 ##
 InstallMethod( Display,
-        "for homalg external LibSing matrices",
+        "for homalg external SingularInterface matrices",
         [ IsHomalgExternalMatrixRep ], 1,
         
   function( o )
     
-    if not IsHomalgExternalLibSingRingRep( HomalgRing( o ) ) then
+    if not IsHomalgExternalSingularInterfaceRingRep( HomalgRing( o ) ) then
         
         TryNextMethod( );
         

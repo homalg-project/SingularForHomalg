@@ -2,10 +2,10 @@ SetPackageInfo( rec(
 
 PackageName := "SingularForHomalg",
 
-Subtitle := "An interface between Singular and homalg using libsing(ular)",
+Subtitle := "An interface between Singular and homalg using SingularInterface",
 
 Version := Maximum( [
-                   "2014.01.04", ## Mohamed's version
+                   "2014.09.10", ## Mohamed's version
                    ## this line prevents merge conflicts
                    ] ),
 
@@ -48,7 +48,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "An interface between Singular and homalg using libsing(ular)",
+  LongTitle := "An interface between Singular and homalg using SingularInterface",
   Autoload  := false
 ),
 
@@ -59,7 +59,7 @@ Dependencies := rec(
                    [ "MatricesForHomalg", ">= 2013.01.09" ],
                    [ "RingsForHomalg", ">= 2013.02.23" ],
                    [ "HomalgToCAS", ">= 2013.01.09" ],
-                   [ "libsing", ">= 0.5.1" ],
+                   [ "SingularInterface", ">= 2014.09.10" ],
                    [ "GAPDoc", ">= 1.0" ]
                    ],
   SuggestedOtherPackages := [ ],
@@ -72,6 +72,6 @@ AvailabilityTest := function( )
 
 Autoload := false,
 
-Keywords := [ "Singular", "libsingular", "libsing", "interface" ]
+Keywords := [ "Singular", "libSingular", "SingularInterface", "interface" ]
 
 ));
