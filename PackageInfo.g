@@ -59,7 +59,7 @@ Dependencies := rec(
                    [ "MatricesForHomalg", ">= 2013.01.09" ],
                    [ "RingsForHomalg", ">= 2013.02.23" ],
                    [ "HomalgToCAS", ">= 2013.01.09" ],
-                   [ "SingularInterface", ">= 2014.09.10" ],
+                   [ "SingularInterface", ">= 2014.09.12" ],
                    [ "GAPDoc", ">= 1.0" ]
                    ],
   SuggestedOtherPackages := [ ],
