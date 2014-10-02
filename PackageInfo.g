@@ -5,7 +5,7 @@ PackageName := "SingularForHomalg",
 Subtitle := "An interface between Singular and homalg using SingularInterface",
 
 Version := Maximum( [
-                   "2014.09.10", ## Mohamed's version
+                   "2014.10.02", ## Mohamed's version
                    ## this line prevents merge conflicts
                    ] ),
 
@@ -59,7 +59,7 @@ Dependencies := rec(
                    [ "MatricesForHomalg", ">= 2013.01.09" ],
                    [ "RingsForHomalg", ">= 2013.02.23" ],
                    [ "HomalgToCAS", ">= 2013.01.09" ],
-                   [ "SingularInterface", ">= 2014.09.12" ],
+                   [ "SingularInterface", ">= 0.6" ],
                    [ "GAPDoc", ">= 1.0" ]
                    ],
   SuggestedOtherPackages := [ ],
