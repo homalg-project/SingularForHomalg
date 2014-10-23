@@ -16,7 +16,7 @@
 
 InstallMethod( CreateHomalgTable,
         "for homalg rings with Groebner basis computations provided by Singular",
-        [ IsSingularRing ],
+        [ IsSI_ring ],
         
   function( singular_ring )
     local RP;
