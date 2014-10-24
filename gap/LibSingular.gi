@@ -80,12 +80,12 @@ InstallGlobalFunction( SendBlockingToCASLibSingularForHomalg,
         
         r := Singular( arg[2] );
         
-        stream.lines := SI_LastOutput( );
+        stream.lines := SingularLastOutput( );
         
-        if r = 0 then
+        if r then
             stream.errors := "";
         else
-            stream.errors := Concatenation( "error: ", SI_Errors );
+            stream.errors := Concatenation( "error: ", SingularLastError( ) );
         fi;
         
     else
