@@ -3,14 +3,14 @@
 @Section Purity with SingularInterface
 @InsertSystem Purity_SingularInterface
 
-@Section Purity with external SingularInterface
+@Section Purity with external SingularInterface package loaded
 @InsertSystem Purity_ExternalSingularInterface
 
-@Section Purity with LibSingular
-@InsertSystem Purity_LibSingular
+@Section Purity with SingularInterpreter
+@InsertSystem Purity_SingularInterpreter
 
-@Section Purity with external SingularForHomalg
+@Section Purity with external SingularForHomalg package loaded
 @InsertSystem Purity_ExternalSingularForHomalg
 
-@Section A3_Purity with LibSingular
-@InsertSystem A3_Purity_LibSingular
+@Section A3_Purity with SingularInterpreter
+@InsertSystem A3_Purity_SingularInterpreter

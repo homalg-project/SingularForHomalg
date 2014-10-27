@@ -1,4 +1,4 @@
-#! @System A3_Purity_LibSingular
+#! @System A3_Purity_SingularInterpreter
 
 LoadPackage( "SingularForHomalg" );
 

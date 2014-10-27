@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##  LibSingular.gi                                 SingularForHomalg package
+##  SingularInterpreter.gi                         SingularForHomalg package
 ##
 ##  Copyright 2011-2012, Mohamed Barakat, University of Kaiserslautern
 ##
@@ -14,7 +14,7 @@
 #
 ####################################
 
-InstallValue( LibSingularForHomalg,
+InstallValue( SingularInterpreterForHomalg,
         rec(
             
             )
@@ -26,7 +26,7 @@ InstallValue( LibSingularForHomalg,
 #
 ####################################
 
-HOMALG_IO_Singular.LaunchCAS := LaunchCASLibSingularForHomalg;
+HOMALG_IO_Singular.LaunchCAS := LaunchCASSingularInterpreterForHomalg;
 
 ####################################
 #
@@ -35,7 +35,7 @@ HOMALG_IO_Singular.LaunchCAS := LaunchCASLibSingularForHomalg;
 ####################################
 
 ##
-InstallGlobalFunction( LaunchCASLibSingularForHomalg,
+InstallGlobalFunction( LaunchCASSingularInterpreterForHomalg,
   function( arg )
     local success, s;
     
@@ -46,13 +46,13 @@ InstallGlobalFunction( LaunchCASLibSingularForHomalg,
         s := rec(
                  lines := "",
                  errors := "",
-                 ## name := "LibSingular", ## using anything other than Singular a name will screw up UpdateMacrosOfLaunchedCASs
-                 SendBlockingToCAS := SendBlockingToCASLibSingularForHomalg,
-                 SendBlockingToCAS_original := SendBlockingToCASLibSingularForHomalg,
-                 TerminateCAS := TerminateCASLibSingularForHomalg,
-                 InitializeMacros := InitializeMacrosForLibSingular,
-                 InitializeCASMacros := InitializeLibSingularMacros,
-                 setinvol := _LibSingular_SetInvolution,
+                 ## name := "SingularInterpreter", ## using anything other than Singular a name will screw up UpdateMacrosOfLaunchedCASs
+                 SendBlockingToCAS := SendBlockingToCASSingularInterpreterForHomalg,
+                 SendBlockingToCAS_original := SendBlockingToCASSingularInterpreterForHomalg,
+                 TerminateCAS := TerminateCASSingularInterpreterForHomalg,
+                 InitializeMacros := InitializeMacrosForSingularInterpreter,
+                 InitializeCASMacros := InitializeSingularInterpreterMacros,
+                 setinvol := _SingularInterpreter_SetInvolution,
                  init_string := Concatenation( HOMALG_IO_Singular.init_string, ";option(notWarnSB)" ),
                  pid := "of GAP",
                  remove_enter := true,
@@ -70,7 +70,7 @@ InstallGlobalFunction( LaunchCASLibSingularForHomalg,
 end );
 
 ##
-InstallGlobalFunction( SendBlockingToCASLibSingularForHomalg,
+InstallGlobalFunction( SendBlockingToCASSingularInterpreterForHomalg,
   function( arg )
     local stream, r;
     
@@ -94,14 +94,14 @@ InstallGlobalFunction( SendBlockingToCASLibSingularForHomalg,
     
 end );
 
-InstallGlobalFunction( TerminateCASLibSingularForHomalg,
+InstallGlobalFunction( TerminateCASSingularInterpreterForHomalg,
   function( arg )
-    # Make this a no-op, as we can never re-start LibSingular
-    # LibSingular will exit when gap exits
+    # Make this a no-op, as we can never re-start SingularInterpreter
+    # SingularInterpreter will exit when gap exits
 end );
 
 ##
-InstallGlobalFunction( InitializeMacrosForLibSingular,
+InstallGlobalFunction( InitializeMacrosForSingularInterpreter,
   function( macros, stream )
     
     macros := InitializeMacros( macros, stream );
@@ -111,7 +111,7 @@ InstallGlobalFunction( InitializeMacrosForLibSingular,
 end );
 
 ##
-InstallGlobalFunction( InitializeLibSingularMacros,
+InstallGlobalFunction( InitializeSingularInterpreterMacros,
   function( stream )
     local macros;
     
@@ -122,7 +122,7 @@ InstallGlobalFunction( InitializeLibSingularMacros,
 end );
 
 ##
-InstallGlobalFunction( _LibSingular_SetInvolution,
+InstallGlobalFunction( _SingularInterpreter_SetInvolution,
   function( R )
     
     _Singular_SetInvolution( R );

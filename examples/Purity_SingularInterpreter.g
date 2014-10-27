@@ -1,4 +1,4 @@
-#! @System Purity_LibSingular
+#! @System Purity_SingularInterpreter
 
 LoadPackage( "SingularForHomalg" );
 

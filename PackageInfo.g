@@ -5,7 +5,7 @@ PackageName := "SingularForHomalg",
 Subtitle := "An interface between Singular and homalg using SingularInterface",
 
 Version := Maximum( [
-                   "2014.10.24", ## Mohamed's version
+                   "2014.10.25", ## Mohamed's version
                    ## this line prevents merge conflicts
                    ] ),
 
