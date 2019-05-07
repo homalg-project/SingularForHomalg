@@ -1,16 +1,16 @@
 @Chapter Examples
 
 @Section Purity with SingularInterface
-@InsertSystem Purity_SingularInterface
+@InsertChunk Purity_SingularInterface
 
 @Section Purity with external SingularInterface package loaded
-@InsertSystem Purity_ExternalSingularInterface
+@InsertChunk Purity_ExternalSingularInterface
 
 @Section Purity with SingularInterpreter
-@InsertSystem Purity_SingularInterpreter
+@InsertChunk Purity_SingularInterpreter
 
 @Section Purity with external SingularForHomalg package loaded
-@InsertSystem Purity_ExternalSingularForHomalg
+@InsertChunk Purity_ExternalSingularForHomalg
 
 @Section A3_Purity with SingularInterpreter
-@InsertSystem A3_Purity_SingularInterpreter
+@InsertChunk A3_Purity_SingularInterpreter
