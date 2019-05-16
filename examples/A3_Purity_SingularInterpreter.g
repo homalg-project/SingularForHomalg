@@ -1,4 +1,4 @@
-#! @System A3_Purity_SingularInterpreter
+#! @Chunk A3_Purity_SingularInterpreter
 
 LoadPackage( "SingularForHomalg" );
 

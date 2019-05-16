@@ -1,4 +1,4 @@
-#! @System Purity_ExternalSingularInterface
+#! @Chunk Purity_ExternalSingularInterface
 
 LoadPackage( "SingularForHomalg" );
 
