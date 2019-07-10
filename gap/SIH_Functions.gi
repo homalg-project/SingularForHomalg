@@ -199,7 +199,7 @@ InstallGlobalFunction( SIH_GetColumnIndependentUnitPositions,
     for i in [ 1 .. SI_nrows( M ) ] do
         for k in Reversed( rest ) do
             if not [ i, k ] in poslist and
-               ##FIXME: IsUnit( R, MatElm( M, i, k ) ) then
+               ##FIXME: IsUnit( R, M[ i, k ] ) then
                SI_deg( SI_\[( M, i, k ) ) = 0 then
                 Add( pos, [ i, k ] );
                 rest := Filtered( rest,
@@ -232,7 +232,7 @@ InstallGlobalFunction( SIH_GetRowIndependentUnitPositions,
     for j in [ 1 .. SI_ncols( M ) ] do
         for k in Reversed( rest ) do
             if not [ j, k ] in poslist and
-               ##FIXME: IsUnit( R, MatElm( M, k, j ) ) then
+               ##FIXME: IsUnit( R, M[ k, j ] ) then
                SI_deg( SI_\[( M, k, j ) ) = 0 then
                 Add( pos, [ j, k ] );
                 rest := Filtered( rest,
