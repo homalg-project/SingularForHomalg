@@ -49,7 +49,6 @@ PackageDoc := rec(
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "An interface between Singular and homalg using SingularInterface",
-  Autoload  := false
 ),
 
 Dependencies := rec(
@@ -66,11 +65,7 @@ Dependencies := rec(
   ExternalConditions := [ ]
 ),
 
-AvailabilityTest := function( )
-    return true;
-  end,
-
-Autoload := false,
+AvailabilityTest := ReturnTrue,
 
 Keywords := [ "Singular", "libSingular", "SingularInterface", "interface" ]
 
